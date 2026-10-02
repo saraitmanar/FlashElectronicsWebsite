@@ -1,0 +1,29 @@
+# SAMPLE PRODUCT (draft): shows on dev/preview only, never in production.
+id: p_0003
+slug: blackout-curtain-panels
+status: draft
+categories: [curtains]
+name:
+  en: Blackout Curtain Panels (Set of 2)
+  es: Paneles de cortina blackout (juego de 2)
+description:
+  en: |
+    Thermal blackout curtain panels with grommet top. Blocks most light and
+    helps keep rooms cool. Sold as a pair.
+  es: |
+    Paneles de cortina blackout térmicos con ojales. Bloquean la mayor parte
+    de la luz y ayudan a mantener la habitación fresca. Se venden en pares.
+skuPrefix: CUR-BLK
+options:
+  color: [ivory, gray, navy, sage]
+  # An option used by only one product can be defined right here:
+  panel-size:
+    name: { en: Panel size, es: Tamaño del panel }
+    values:
+      - { id: 52x63, code: "5263", label: { en: 52 × 63 in, es: 52 × 63 pulg } }
+      - { id: 52x84, code: "5284", label: { en: 52 × 84 in, es: 52 × 84 pulg } }
+      - { id: 52x95, code: "5295", label: { en: 52 × 95 in, es: 52 × 95 pulg } }
+packaging:
+  unit: pack
+  unitsPerPack: 2
+createdAt: 2026-10-02

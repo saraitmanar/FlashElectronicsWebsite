@@ -1,0 +1,33 @@
+# Shared color list. Define a color once here and reuse it in any product:
+#   options:
+#     color: [navy, gray, white]
+# id:   used in product files, photo names (navy-1.jpg) and URLs (?color=navy)
+# code: used to build SKUs (BED-CMF7-NVY-QN); must be unique in this file
+# hex:  swatch color shown on the site
+
+name: { en: Color, es: Color }
+type: swatch
+values:
+  - { id: black, code: BLK, label: { en: Black, es: Negro }, hex: "#1c1c1e" }
+  - { id: white, code: WHT, label: { en: White, es: Blanco }, hex: "#ffffff" }
+  - { id: ivory, code: IVR, label: { en: Ivory, es: Marfil }, hex: "#f4efe1" }
+  - { id: beige, code: BGE, label: { en: Beige, es: Beige }, hex: "#d9c8a9" }
+  - { id: gray, code: GRY, label: { en: Gray, es: Gris }, hex: "#9a9ca1" }
+  - { id: charcoal, code: CHR, label: { en: Charcoal, es: Carbón }, hex: "#45474d" }
+  - { id: navy, code: NVY, label: { en: Navy, es: Azul marino }, hex: "#1f2a44" }
+  - { id: blue, code: BLU, label: { en: Blue, es: Azul }, hex: "#2f5fb3" }
+  - { id: light-blue, code: LBL, label: { en: Light blue, es: Azul claro }, hex: "#a9c8e8" }
+  - { id: teal, code: TEL, label: { en: Teal, es: Verde azulado }, hex: "#2a7f7f" }
+  - { id: green, code: GRN, label: { en: Green, es: Verde }, hex: "#3d7a46" }
+  - { id: sage, code: SGE, label: { en: Sage, es: Verde salvia }, hex: "#a3b18a" }
+  - { id: red, code: RED, label: { en: Red, es: Rojo }, hex: "#c0392b" }
+  - { id: burgundy, code: BRG, label: { en: Burgundy, es: Vino tinto }, hex: "#6d1f2c" }
+  - { id: pink, code: PNK, label: { en: Pink, es: Rosado }, hex: "#f2b8c6" }
+  - { id: purple, code: PRP, label: { en: Purple, es: Morado }, hex: "#6c4b8b" }
+  - { id: yellow, code: YLW, label: { en: Yellow, es: Amarillo }, hex: "#f2c94c" }
+  - { id: orange, code: ORG, label: { en: Orange, es: Naranja }, hex: "#e67e22" }
+  - { id: brown, code: BRN, label: { en: Brown, es: Marrón }, hex: "#7a5236" }
+  - { id: taupe, code: TPE, label: { en: Taupe, es: Topo }, hex: "#8b7d6b" }
+  - { id: gold, code: GLD, label: { en: Gold, es: Dorado }, hex: "#c9a34e" }
+  - { id: silver, code: SLV, label: { en: Silver, es: Plateado }, hex: "#c0c4c8" }
+  - { id: multicolor, code: MLT, label: { en: Multicolor, es: Multicolor } }

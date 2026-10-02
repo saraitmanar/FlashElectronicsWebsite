@@ -1,0 +1,27 @@
+# SAMPLE PRODUCT (draft): shows on dev/preview only, never in production.
+id: p_0001
+slug: basic-crew-neck-t-shirt
+status: draft
+categories: [clothing/men, clothing/women]
+name:
+  en: Basic Crew Neck T-Shirt
+  es: Camiseta básica cuello redondo
+shortDescription:
+  en: Soft everyday cotton tee.
+  es: Camiseta de algodón suave para todos los días.
+description:
+  en: |
+    Classic crew neck t-shirt in soft cotton. A best seller for stores and
+    resellers, available in core colors and sizes S to 2XL.
+  es: |
+    Camiseta clásica de cuello redondo en algodón suave. Muy popular entre
+    tiendas y revendedores, disponible en colores básicos y tallas S a 2XL.
+skuPrefix: CLO-TEE
+options:
+  color: [black, white, navy, gray]
+  size: [s, m, l, xl, 2xl]
+attributes:
+  - label: { en: Material, es: Material }
+    value: { en: 100% cotton, es: 100% algodón }
+tags: [best-seller]
+createdAt: 2026-10-02

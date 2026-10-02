@@ -1,0 +1,18 @@
+# SAMPLE PRODUCT (draft): shows on dev/preview only, never in production.
+# A simple product: no options, so it has exactly one variant (SKU = skuPrefix).
+id: p_0004
+slug: eau-de-parfum-lavender-100ml
+status: draft
+brand: example-brand
+categories: [perfumes/women]
+name:
+  en: Lavender Eau de Parfum 100 ml
+  es: Eau de Parfum de lavanda 100 ml
+description:
+  en: Fresh floral fragrance with lavender and vanilla notes.
+  es: Fragancia floral fresca con notas de lavanda y vainilla.
+skuPrefix: PRF-LAV100
+attributes:
+  - label: { en: Size, es: Tamaño }
+    value: { en: 100 ml / 3.4 fl oz, es: 100 ml / 3.4 fl oz }
+createdAt: 2026-10-02

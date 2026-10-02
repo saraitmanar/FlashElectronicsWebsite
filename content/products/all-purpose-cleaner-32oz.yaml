@@ -1,0 +1,23 @@
+# SAMPLE PRODUCT (draft): shows on dev/preview only, never in production.
+id: p_0005
+slug: all-purpose-cleaner-32oz
+status: draft
+categories: [household/cleaning]
+name:
+  en: All-Purpose Cleaner 32 oz
+  es: Limpiador multiusos 32 oz
+description:
+  en: Multi-surface cleaner for kitchens, bathrooms and floors. Sold by the case.
+  es: Limpiador para cocinas, baños y pisos. Se vende por caja.
+skuPrefix: HH-APC32
+options:
+  scent:
+    name: { en: Scent, es: Aroma }
+    values:
+      - { id: original, code: ORI, label: { en: Original, es: Original } }
+      - { id: lavender, code: LAV, label: { en: Lavender, es: Lavanda } }
+      - { id: lemon, code: LEM, label: { en: Lemon, es: Limón } }
+packaging:
+  unit: case
+  unitsPerPack: 12
+createdAt: 2026-10-02
