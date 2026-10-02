@@ -15,6 +15,7 @@ export function MobileNav() {
   const t = useTranslations("Nav");
   const tHeader = useTranslations("Header");
   const tWhatsApp = useTranslations("WhatsApp");
+  const tInquiry = useTranslations("Inquiry");
   const pathname = usePathname();
   const dialogRef = useRef<HTMLDialogElement>(null);
 
@@ -77,6 +78,20 @@ export function MobileNav() {
                   </li>
                 );
               })}
+              <li>
+                <Link
+                  href="/inquiry"
+                  aria-current={pathname === "/inquiry" ? "page" : undefined}
+                  className={clsx(
+                    "block rounded-lg px-3 py-3 text-base font-medium",
+                    pathname === "/inquiry"
+                      ? "border-l-4 border-accent bg-surface text-primary"
+                      : "text-ink hover:bg-surface",
+                  )}
+                >
+                  {tInquiry("navLabel")}
+                </Link>
+              </li>
             </ul>
           </nav>
 

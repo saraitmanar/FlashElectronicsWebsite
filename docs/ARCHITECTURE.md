@@ -1,7 +1,7 @@
 # Architecture Proposal — Wholesale Catalog Site (v1)
 
-Status: **Approved.** Phases 1–3 (foundation, catalog data, catalog pages)
-are implemented. Later phases follow the plan below.
+Status: **Approved.** Phases 1–4 (foundation, catalog data, catalog pages,
+inquiry list) are implemented. Later phases follow the plan below.
 
 Goal of v1: a fast, image-first, bilingual (EN/ES) catalog for Flash Electronics
 International that turns browsing into WhatsApp conversations. No payments,
@@ -630,6 +630,30 @@ the website code stays largely the same.
   prices are hidden) and `BreadcrumbList`. The sitemap lists categories,
   brands and active products in both languages.
 - Not yet: swapping the card image when hovering color dots, and photo zoom.
+
+## Phase 4 implementation notes
+
+- The inquiry list is a Zustand store saved in `localStorage` under
+  `flash:inquiry` (versioned). It's loaded after hydration (`InquiryHydrator`),
+  so static HTML and the first render match, and it stays in sync across tabs.
+  Lines are `{ productId, variantId, quantity }` plus a display snapshot
+  (EN/ES name and variant label, SKU, image, packaging), so the list renders
+  without loading the catalog and switches language correctly.
+- Quantities follow each product's `packaging` (step / minimum). The default
+  is 1 at a time. The wholesale minimum is order-level and only *shown* (from
+  `siteConfig.wholesale.minimumOrderValue`) because prices aren't public.
+- The details form is optional: retail/wholesale, name, business name (for
+  wholesale), pickup or delivery within the US (city/state + ZIP), notes.
+- The WhatsApp message is built by a pure, tested function
+  (`lib/inquiry/message.ts`) in the visitor's language. It includes a
+  reference code (`FL-XXXX`), product links with the selected options, SKUs,
+  and quantities with units ("2 cases (24 pcs)"). Long lists are shortened
+  step by step to stay under ~2,000 encoded characters: links are dropped
+  first, then each product goes on one line, then the last items are replaced
+  by "…and N more items". "Copy list" always copies the full list.
+- After sending, the page asks whether to clear the list instead of
+  clearing it automatically. "Clear list" needs a second tap.
+- `/inquiry` is `noindex`, and the floating WhatsApp button is hidden there.
 
 ## Remaining questions
 

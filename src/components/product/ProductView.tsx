@@ -1,10 +1,11 @@
 "use client";
 
-import { AlertCircle, Truck } from "lucide-react";
+import { AlertCircle, CheckCircle2, ListPlus, Truck } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
-import { useEffect, useMemo, useState, type MouseEvent } from "react";
+import { useEffect, useMemo, useRef, useState, type MouseEvent } from "react";
 import { PackagingDetails } from "@/components/catalog/PackagingLabel";
 import { buttonClasses } from "@/components/ui/button";
+import { QuantityStepper } from "@/components/ui/QuantityStepper";
 import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
@@ -19,6 +20,9 @@ import {
   type Selection,
 } from "@/lib/catalog/variant-selection";
 import { localize } from "@/lib/i18n/localized";
+import { lineFromProduct } from "@/lib/inquiry/from-product";
+import { quantityRules } from "@/lib/inquiry/quantity";
+import { useInquiry } from "@/lib/inquiry/store";
 import { buildWhatsAppUrl } from "@/lib/inquiry/whatsapp";
 import { ProductGallery } from "./ProductGallery";
 import { VariantSelector } from "./VariantSelector";
@@ -27,7 +31,13 @@ import { VariantSelector } from "./VariantSelector";
 export function ProductView({ product, brand }: { product: Product; brand?: Brand }) {
   const t = useTranslations("Product");
   const tCatalog = useTranslations("Catalog");
+  const tInquiry = useTranslations("Inquiry");
   const locale = useLocale() as Locale;
+  const addToInquiry = useInquiry((s) => s.add);
+  const [quantity, setQuantity] = useState(() => quantityRules(product.packaging).min);
+  const [toast, setToast] = useState(false);
+  const toastTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
+  useEffect(() => () => clearTimeout(toastTimer.current), []);
 
   // Static HTML renders the default variant; a shared link like
   // ?color=gray is applied right after the page loads.
@@ -61,6 +71,13 @@ export function ProductView({ product, brand }: { product: Product; brand?: Bran
   // Add the exact page URL (with the selected options) when the link is clicked.
   function addPageUrl(event: MouseEvent<HTMLAnchorElement>) {
     event.currentTarget.href = buildWhatsAppUrl(`${whatsappText}\n${window.location.href}`);
+  }
+
+  function add() {
+    addToInquiry(lineFromProduct(product, selection, quantity, brand?.name));
+    setToast(true);
+    clearTimeout(toastTimer.current);
+    toastTimer.current = setTimeout(() => setToast(false), 5000);
   }
 
   return (
@@ -112,14 +129,33 @@ export function ProductView({ product, brand }: { product: Product; brand?: Bran
         <PackagingDetails packaging={product.packaging} />
 
         <div className="flex flex-col gap-3">
+          <div className="flex flex-wrap gap-3">
+            <QuantityStepper
+              value={quantity}
+              onChange={setQuantity}
+              packaging={product.packaging}
+              label={tInquiry("quantity")}
+            />
+            <button
+              type="button"
+              onClick={add}
+              className={buttonClasses({
+                size: "lg",
+                className: "h-11 min-w-44 flex-1 px-4 whitespace-nowrap max-sm:text-sm",
+              })}
+            >
+              <ListPlus className="size-5 max-[400px]:hidden" aria-hidden="true" />
+              {tInquiry("addToList")}
+            </button>
+          </div>
           <a
             href={buildWhatsAppUrl(whatsappText)}
             onClick={addPageUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className={buttonClasses({ variant: "whatsapp", size: "lg" })}
+            className={buttonClasses({ variant: "outline", size: "lg" })}
           >
-            <WhatsAppIcon className="size-5" />
+            <WhatsAppIcon className="size-5 text-whatsapp" />
             {t("askWhatsApp")}
           </a>
           <p className="flex items-center gap-2 text-sm text-ink-muted">
@@ -127,6 +163,26 @@ export function ProductView({ product, brand }: { product: Product; brand?: Bran
             {t("pickupDelivery")}
           </p>
         </div>
+      </div>
+
+      {/* Confirmation after adding (announced to screen readers) */}
+      <div
+        role="status"
+        aria-live="polite"
+        className="pointer-events-none fixed inset-x-4 bottom-24 z-40 flex justify-center sm:bottom-8"
+      >
+        {toast && (
+          <div className="pointer-events-auto flex w-full max-w-md items-center gap-3 rounded-xl bg-primary px-4 py-3 text-sm text-on-primary shadow-lg">
+            <CheckCircle2 className="size-5 shrink-0 text-accent" aria-hidden="true" />
+            <span className="flex-1">{tInquiry("added")}</span>
+            <Link
+              href="/inquiry"
+              className="font-semibold text-accent underline-offset-2 hover:underline"
+            >
+              {tInquiry("viewList")}
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );

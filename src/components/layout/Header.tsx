@@ -1,5 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { buttonClasses } from "@/components/ui/button";
+import { InquiryBadge } from "@/components/inquiry/InquiryBadge";
 import { Container } from "@/components/ui/Container";
 import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
 import { buildWhatsAppUrl } from "@/lib/inquiry/whatsapp";
@@ -32,6 +33,7 @@ export async function Header() {
             <WhatsAppIcon className="size-4" />
             {t("chatWhatsApp")}
           </a>
+          <InquiryBadge />
           <MobileNav />
         </div>
       </Container>

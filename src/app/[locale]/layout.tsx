@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { InquiryHydrator } from "@/components/inquiry/InquiryHydrator";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { SpanishSuggestionBanner } from "@/components/layout/SpanishSuggestionBanner";
@@ -63,6 +64,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
           <main className="flex-1">{children}</main>
           <Footer />
           <WhatsAppFab />
+          <InquiryHydrator />
         </NextIntlClientProvider>
       </body>
     </html>

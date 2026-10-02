@@ -14,7 +14,7 @@ export function Logo({ className }: { className?: string }) {
       <span className="grid size-8 shrink-0 place-items-center rounded-lg bg-accent text-on-accent sm:size-9">
         <Zap className="size-5" strokeWidth={2.5} aria-hidden="true" />
       </span>
-      <span className="flex flex-col leading-none whitespace-nowrap">
+      <span className="flex flex-col leading-none whitespace-nowrap max-[359px]:sr-only">
         <span className="text-[0.95rem] font-bold tracking-tight sm:text-base">
           Flash Electronics
         </span>
