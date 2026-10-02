@@ -1,7 +1,7 @@
 {
   "Metadata": {
     "title": "Mercancía al por mayor y al detal en Miami",
-    "description": "Ropa, artículos para el hogar, cortinas, ropa de cama, perfumes y productos del hogar de muchas marcas. Al por mayor para tiendas y revendedores, al detal para todos. Recogida en tienda y entrega local en Miami."
+    "description": "Ropa, artículos para el hogar, cortinas, ropa de cama, perfumes y productos del hogar. Al por mayor para tiendas y revendedores, al detal para todos. Recogida en tienda y entrega en US."
   },
   "Nav": {
     "home": "Inicio",
@@ -32,13 +32,13 @@
     "defaultMessage": "¡Hola! Tengo una pregunta sobre sus productos."
   },
   "Footer": {
-    "tagline": "Mercancía al por mayor y al detal de muchas marcas. Negocio familiar en Miami.",
+    "tagline": "Mercancía al por mayor y al detal. Negocio familiar en Miami.",
     "contactHeading": "Contacto",
     "servicesHeading": "Recogida y entrega",
     "linksHeading": "Explorar",
     "whatsapp": "WhatsApp",
     "pickup": "Recogida en tienda",
-    "delivery": "Entrega local",
+    "delivery": "Entrega a todo US",
     "rights": "© {year} {name}. Todos los derechos reservados.",
     "brandsNote": "Las marcas de los productos pertenecen a sus respectivos dueños."
   },
@@ -56,7 +56,7 @@
       "pickupTitle": "Recogida en tienda",
       "pickupBody": "Recoge tu pedido en nuestra tienda en Miami.",
       "deliveryTitle": "Entrega local",
-      "deliveryBody": "Hacemos entregas dentro de nuestra zona local."
+      "deliveryBody": "Hacemos entregas dentro de los Estados Unidos."
     },
     "categoriesTitle": "Lo que vendemos",
     "categories": {

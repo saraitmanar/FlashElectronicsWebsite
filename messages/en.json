@@ -1,7 +1,7 @@
 {
   "Metadata": {
     "title": "Wholesale & Retail Merchandise in Miami",
-    "description": "Clothing, home goods, curtains, bedding, perfumes and household products from many brands. Wholesale for stores and resellers, retail for everyone. Store pickup and local delivery in Miami."
+    "description": "Clothing, home goods, curtains, bedding, perfumes and household products. Wholesale for stores and resellers, retail for everyone. Store pickup and delivery in Miami."
   },
   "Nav": {
     "home": "Home",
@@ -38,14 +38,14 @@
     "linksHeading": "Explore",
     "whatsapp": "WhatsApp",
     "pickup": "Store pickup",
-    "delivery": "Local delivery",
+    "delivery": "Delivery",
     "rights": "© {year} {name}. All rights reserved.",
     "brandsNote": "Product brands and trademarks belong to their respective owners."
   },
   "Home": {
     "eyebrow": "Family-owned in Miami",
     "title": "Wholesale & retail merchandise for stores, resellers and families",
-    "subtitle": "Clothing, home goods, curtains, bedding, perfumes, household products and more, from many brands. Browse the catalog, build your list and send it to us on WhatsApp.",
+    "subtitle": "Clothing, home goods, curtains, bedding, perfumes, household products and more. Browse the catalog, build your list and send it to us on WhatsApp.",
     "ctaBrowse": "Browse products",
     "ctaWhatsApp": "Chat on WhatsApp",
     "trust": {
@@ -55,8 +55,8 @@
       "brandsBody": "A wide selection of merchandise from trusted brands.",
       "pickupTitle": "Store pickup",
       "pickupBody": "Pick up your order at our Miami store.",
-      "deliveryTitle": "Local delivery",
-      "deliveryBody": "We can deliver within our local area."
+      "deliveryTitle": "Delivery",
+      "deliveryBody": "We can deliver within the US."
     },
     "categoriesTitle": "What we carry",
     "categories": {
@@ -77,7 +77,7 @@
       "sendBody": "Send your list in one tap. We reply with pricing and availability."
     },
     "pricingTitle": "Pricing on request",
-    "pricingBody": "Prices depend on quantity and whether you buy retail or wholesale. Send us your list and we'll reply with a quote.",
+    "pricingBody": "Prices depend on quantity. Send us your list and we'll reply with a quote.",
     "ctaTitle": "Have a question or a large order?",
     "ctaBody": "Message us on WhatsApp. We speak English and Spanish."
   },
