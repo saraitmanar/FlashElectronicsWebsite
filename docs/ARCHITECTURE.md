@@ -120,9 +120,10 @@ export const siteConfig = {
 ├─ content/
 │  ├─ categories.yaml
 │  ├─ brands.yaml
-│  ├─ options/
-│  │  ├─ colors.yaml             # shared color library (id, code, en/es label, hex)
-│  │  └─ sizes.yaml              # shared size library (twin/full/queen/king, S–XL…)
+│  ├─ options/                 # shared option lists; file name = option id
+│  │  ├─ color.yaml              # id, SKU code, en/es label, hex swatch
+│  │  ├─ size.yaml               # clothing sizes (XS–3XL)
+│  │  └─ bed-size.yaml           # twin/full/queen/king/cal-king
 │  ├─ products/
 │  │  ├─ luxury-comforter-set.yaml
 │  │  └─ …                       # one file per product
@@ -491,11 +492,11 @@ description:
     Juego de edredón de microfibra suave con fundas y faldón.
 skuPrefix: BED-CMF7
 options:
-  color: [navy, gray, white, burgundy]  # ids from content/options/colors.yaml
-  size: [queen, king]                   # ids from content/options/sizes.yaml
-# → 8 variants generated automatically; SKUs like BED-CMF7-NVY-Q
+  color: [navy, gray, white, burgundy]  # ids from content/options/color.yaml
+  bed-size: [queen, king]               # ids from content/options/bed-size.yaml
+# → 8 variants generated automatically; SKUs like BED-CMF7-NVY-QN
 variants:                               # list exceptions only
-  - match: { color: burgundy, size: king }
+  - match: { color: burgundy, bed-size: king }
     available: false
   - match: { color: white, size: queen }
     sku: "000123456"                    # POS SKU when it differs from the pattern
@@ -593,6 +594,22 @@ the website code stays largely the same.
    `docs/CATALOG-GUIDE.md`.
 
 ---
+
+## Phase 2 implementation notes
+
+- Option lists are files in `content/options/`, named after the option id
+  (`color.yaml`, `size.yaml`, `bed-size.yaml`). One-off options (scent, panel
+  size) can be defined inside a product file.
+- `images:sync` stores photos on **Cloudinary when `CLOUDINARY_URL` is set**,
+  otherwise as optimized JPEGs in `public/catalog/` (committed). The manifest
+  records which, so switching later just means re-running the sync.
+- **Draft products** appear in development and on Vercel previews but never on
+  the production deployment (`VERCEL_ENV=production`), so new products can
+  be reviewed before publishing. The five sample products are drafts.
+- `npm run build` runs `content:check` first, and the catalog loader refuses
+  invalid content, so bad data never deploys. Active products can't contain
+  "TODO" text.
+- Step-by-step instructions for the maintainer: `docs/CATALOG-GUIDE.md`.
 
 ## Remaining questions
 

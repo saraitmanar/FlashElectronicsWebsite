@@ -1,0 +1,5 @@
+# Brands of the products we sell (not the store itself).
+# Product files refer to a brand by its id. Brand names are not translated.
+
+- id: example-brand
+  name: Example Brand # placeholder used by sample products; replace or delete

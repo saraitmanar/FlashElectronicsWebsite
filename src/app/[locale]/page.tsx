@@ -4,6 +4,7 @@ import {
   BedDouble,
   Blinds,
   ListPlus,
+  Package,
   Search,
   Send,
   Shirt,
@@ -23,6 +24,8 @@ import { Container } from "@/components/ui/Container";
 import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
+import { catalog } from "@/lib/catalog";
+import { localize } from "@/lib/i18n/localized";
 import { buildWhatsAppUrl } from "@/lib/inquiry/whatsapp";
 import { alternatesFor } from "@/lib/seo/metadata";
 
@@ -32,15 +35,16 @@ export async function generateMetadata({ params }: PageProps<"/[locale]">): Prom
   return { alternates: alternatesFor("/", locale) };
 }
 
-// Category tiles become links to category pages in Phase 3.
-const categories = [
-  { label: "categories.clothing", icon: Shirt },
-  { label: "categories.bedding", icon: BedDouble },
-  { label: "categories.curtains", icon: Blinds },
-  { label: "categories.homeGoods", icon: Sofa },
-  { label: "categories.perfumes", icon: Sparkles },
-  { label: "categories.household", icon: SprayCan },
-] as const satisfies readonly { label: string; icon: LucideIcon }[];
+// Icons for top-level categories (content/categories.yaml). New categories
+// get a generic icon until one is added here.
+const categoryIcons: Record<string, LucideIcon> = {
+  clothing: Shirt,
+  bedding: BedDouble,
+  curtains: Blinds,
+  "home-goods": Sofa,
+  perfumes: Sparkles,
+  household: SprayCan,
+};
 
 const trust = [
   { title: "trust.wholesaleTitle", body: "trust.wholesaleBody", icon: Tags },
@@ -63,6 +67,8 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
   const t = await getTranslations("Home");
   const tWhatsApp = await getTranslations("WhatsApp");
   const whatsappUrl = buildWhatsAppUrl(tWhatsApp("defaultMessage"));
+  // Category tiles become links to category pages in Phase 3.
+  const topCategories = (await catalog.listCategories()).filter((c) => !c.parentId);
 
   return (
     <>
@@ -121,15 +127,20 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
         <Container className="py-14 sm:py-16">
           <h2 className="text-2xl font-bold tracking-tight text-primary">{t("categoriesTitle")}</h2>
           <ul className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-6">
-            {categories.map(({ label, icon: Icon }) => (
-              <li
-                key={label}
-                className="flex flex-col items-center gap-3 rounded-xl border border-line bg-surface px-3 py-6 text-center shadow-xs"
-              >
-                <Icon className="size-8 text-primary" strokeWidth={1.5} aria-hidden="true" />
-                <span className="text-sm font-medium text-ink">{t(label)}</span>
-              </li>
-            ))}
+            {topCategories.map((category) => {
+              const Icon = categoryIcons[category.id] ?? Package;
+              return (
+                <li
+                  key={category.id}
+                  className="flex flex-col items-center gap-3 rounded-xl border border-line bg-surface px-3 py-6 text-center shadow-xs"
+                >
+                  <Icon className="size-8 text-primary" strokeWidth={1.5} aria-hidden="true" />
+                  <span className="text-sm font-medium text-ink">
+                    {localize(category.name, locale)}
+                  </span>
+                </li>
+              );
+            })}
           </ul>
         </Container>
       </section>

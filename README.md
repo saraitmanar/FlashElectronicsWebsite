@@ -9,7 +9,7 @@ for the full design.
 
 ## Getting started
 
-Requires Node.js 20.9 or newer.
+Requires Node.js 22 or newer.
 
 ```bash
 npm install
@@ -23,12 +23,18 @@ npm run dev        # http://localhost:3000 (English) and /es (Spanish)
 | `npm run typecheck` | Generates route types, then runs TypeScript |
 | `npm run lint` | ESLint |
 | `npm run format` | Prettier (also sorts Tailwind classes) |
-| `npm run check` | Typecheck + lint + format check (run before pushing) |
+| `npm test` | Unit tests (Vitest) |
+| `npm run check` | Typecheck, lint, format check, tests and content check (run before pushing) |
+| `npm run product:new` | Create a new product file (asks a few questions) |
+| `npm run images:sync` | Process photos from `photos/` and update the image manifest |
+| `npm run content:check` | Validate everything in `content/` (also runs before every build) |
 
 ## Where things live
 
 | What | Where |
 |---|---|
+| Products, categories, brands, colors/sizes | `content/` — see [`docs/CATALOG-GUIDE.md`](docs/CATALOG-GUIDE.md) |
+| Catalog code (model, validation, data access) | `src/lib/catalog/` |
 | Business settings (WhatsApp number, address, hours, pricing switch, wholesale minimum, pickup/delivery) | `src/lib/config/site.ts` |
 | Brand colors and design tokens | `src/app/globals.css` (`@theme` block) |
 | UI text in English / Spanish | `messages/en.json`, `messages/es.json` |

@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "products": {
+    "basic-crew-neck-t-shirt": [
+      {
+        "file": "black-1.jpg",
+        "hash": "f9f3ab29a13d2776",
+        "src": "/catalog/basic-crew-neck-t-shirt/black-1.jpg",
+        "width": 1800,
+        "height": 2000,
+        "blurDataURL": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAABQAgCdASoOABAAA4BaJaQATwBQLGIFmvtiaIAA/uvF3KJ+3AopYxv8pcsOYNgGZ29Ot4hVt+aStGOP/bHuik9nvi2/rsiKghvqh6+YbKRcm5XVBCPz7B5Nh07diu/Ba0AAAA==",
+        "provider": "local"
+      }
+    ]
+  }
+}

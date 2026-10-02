@@ -1,0 +1,38 @@
+# SAMPLE PRODUCT (draft): shows on dev/preview only, never in production.
+id: p_0002
+slug: luxury-7-piece-comforter-set
+status: draft
+brand: example-brand
+categories: [bedding/comforters]
+name:
+  en: Luxury 7-Piece Comforter Set
+  es: Juego de edredón de lujo de 7 piezas
+shortDescription:
+  en: Comforter, shams, bed skirt and decorative pillows.
+  es: Edredón, fundas, faldón y cojines decorativos.
+description:
+  en: |
+    Soft microfiber comforter set with two shams, a bed skirt and three
+    decorative pillows. Machine washable.
+  es: |
+    Juego de edredón de microfibra suave con dos fundas, faldón y tres
+    cojines decorativos. Lavable a máquina.
+skuPrefix: BED-CMF7
+options:
+  color: [navy, gray, white, burgundy]
+  bed-size: [queen, king]
+# Every color/size combination is created automatically (8 variants).
+# List only the exceptions:
+variants:
+  - match: { color: burgundy, bed-size: king }
+    available: false
+packaging:
+  unit: set
+attributes:
+  - label: { en: Pieces, es: Piezas }
+    value: { en: "7", es: "7" }
+  - label: { en: Material, es: Material }
+    value: { en: Microfiber, es: Microfibra }
+tags: [new]
+featured: true
+createdAt: 2026-10-02
