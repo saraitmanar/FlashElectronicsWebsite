@@ -1,0 +1,89 @@
+{
+  "Metadata": {
+    "title": "Mercancía al por mayor y al detal en Miami",
+    "description": "Ropa, artículos para el hogar, cortinas, ropa de cama, perfumes y productos del hogar de muchas marcas. Al por mayor para tiendas y revendedores, al detal para todos. Recogida en tienda y entrega local en Miami."
+  },
+  "Nav": {
+    "home": "Inicio",
+    "products": "Productos",
+    "howToOrder": "Cómo comprar",
+    "about": "Nosotros",
+    "contact": "Contacto"
+  },
+  "Header": {
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "menu": "Menú",
+    "mainNav": "Navegación principal",
+    "chatWhatsApp": "Escríbenos por WhatsApp"
+  },
+  "LanguageSwitcher": {
+    "label": "Idioma",
+    "en": "English",
+    "es": "Español"
+  },
+  "SpanishBanner": {
+    "text": "¿Prefiere ver el sitio en español?",
+    "action": "Ver en español",
+    "dismiss": "Cerrar"
+  },
+  "WhatsApp": {
+    "fabLabel": "Escríbenos por WhatsApp",
+    "defaultMessage": "¡Hola! Tengo una pregunta sobre sus productos."
+  },
+  "Footer": {
+    "tagline": "Mercancía al por mayor y al detal de muchas marcas. Negocio familiar en Miami.",
+    "contactHeading": "Contacto",
+    "servicesHeading": "Recogida y entrega",
+    "linksHeading": "Explorar",
+    "whatsapp": "WhatsApp",
+    "pickup": "Recogida en tienda",
+    "delivery": "Entrega local",
+    "rights": "© {year} {name}. Todos los derechos reservados.",
+    "brandsNote": "Las marcas de los productos pertenecen a sus respectivos dueños."
+  },
+  "Home": {
+    "eyebrow": "Negocio familiar en Miami",
+    "title": "Mercancía al por mayor y al detal para tiendas, revendedores y familias",
+    "subtitle": "Ropa, artículos para el hogar, cortinas, ropa de cama, perfumes, productos del hogar y más, de muchas marcas. Explora el catálogo, arma tu lista y envíanosla por WhatsApp.",
+    "ctaBrowse": "Ver productos",
+    "ctaWhatsApp": "Escríbenos por WhatsApp",
+    "trust": {
+      "wholesaleTitle": "Al por mayor y al detal",
+      "wholesaleBody": "Pedidos grandes para negocios y artículos sueltos para todos.",
+      "brandsTitle": "Muchas marcas",
+      "brandsBody": "Una amplia selección de mercancía de marcas confiables.",
+      "pickupTitle": "Recogida en tienda",
+      "pickupBody": "Recoge tu pedido en nuestra tienda en Miami.",
+      "deliveryTitle": "Entrega local",
+      "deliveryBody": "Hacemos entregas dentro de nuestra zona local."
+    },
+    "categoriesTitle": "Lo que vendemos",
+    "categories": {
+      "clothing": "Ropa",
+      "bedding": "Ropa de cama",
+      "curtains": "Cortinas",
+      "homeGoods": "Artículos para el hogar",
+      "perfumes": "Perfumes",
+      "household": "Productos del hogar"
+    },
+    "stepsTitle": "Cómo hacer tu pedido",
+    "steps": {
+      "browseTitle": "Explora",
+      "browseBody": "Encuentra productos y elige colores, tallas y cantidades.",
+      "listTitle": "Arma tu lista",
+      "listBody": "Agrega todo lo que necesitas a tu lista de consulta.",
+      "sendTitle": "Envía por WhatsApp",
+      "sendBody": "Envía tu lista con un toque. Te respondemos con precios y disponibilidad."
+    },
+    "pricingTitle": "Precios a consultar",
+    "pricingBody": "Los precios dependen de la cantidad y de si compras al detal o al por mayor. Envíanos tu lista y te respondemos con una cotización.",
+    "ctaTitle": "¿Tienes una pregunta o un pedido grande?",
+    "ctaBody": "Escríbenos por WhatsApp. Hablamos español e inglés."
+  },
+  "NotFound": {
+    "title": "Página no encontrada",
+    "body": "La página que buscas no existe o fue movida.",
+    "backHome": "Volver al inicio"
+  }
+}

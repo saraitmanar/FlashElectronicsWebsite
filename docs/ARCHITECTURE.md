@@ -1,7 +1,7 @@
 # Architecture Proposal — Wholesale Catalog Site (v1)
 
-Status: **Revision 2: updated with business decisions, awaiting final approval.**
-No application code has been written yet.
+Status: **Approved.** Phase 1 (foundation) is implemented. Later phases follow
+the plan below.
 
 Goal of v1: a fast, image-first, bilingual (EN/ES) catalog for Flash Electronics
 International that turns browsing into WhatsApp conversations. No payments,
@@ -22,6 +22,8 @@ reserved in the design.
 | 6 | WhatsApp | One WhatsApp Business number for wholesale and retail. | §1 config `contact.whatsapp` |
 | 7 | Branding | Flash Electronics International is the **store identity**. Products carry their **own brand** (optional). Merchandise is never presented as Flash-branded. | §4 `Brand`, brand filter, JSON-LD in §SEO |
 | 8 | Fulfillment | **Store pickup or local delivery**, both explained on the site and chosen in the inquiry. No rates, no checkout logistics. | §2 `/how-to-order`, §6 inquiry form, config `fulfillment` |
+| 9 | Visual identity | Blue-and-yellow identity, refined: **deep navy primary, muted warm gold accent** used sparingly for CTAs/highlights (never large backgrounds), **warm off-white page background, white cards, charcoal text**. All colors are centralized design tokens. | `src/app/globals.css` `@theme`, README "Design tokens" |
+| 10 | POS | The store uses an **Ocean Bank POS**. Whether it can export products/SKUs is not yet known. | §8 one-time seed, §9 |
 
 ---
 
@@ -150,7 +152,7 @@ export const siteConfig = {
 │  │  ├─ inquiry/ (store.ts, message.ts, whatsapp.ts)
 │  │  ├─ i18n/, seo/, images/
 │  │  └─ config/site.ts
-│  └─ middleware.ts              # next-intl locale handling (no detection redirects)
+│  └─ proxy.ts                   # next-intl locale handling, no detection redirects (Next.js 16 renamed middleware → proxy)
 └─ docs/ARCHITECTURE.md, docs/CATALOG-GUIDE.md (how to add/edit products & photos)
 ```
 
@@ -550,8 +552,8 @@ the runtime model stay the same.
 | **Lead tracking** | Reference codes, analytics events | `POST /api/inquiries` → DB/CRM/email |
 
 **Long-term direction:** which commerce backend to use depends mostly on
-**which POS you use**. If it has a good API (e.g. Square, Clover, Lightspeed),
-the website can read inventory and possibly sell through it. If not, moving
+the POS. The store uses an Ocean Bank POS. If it offers an API or reliable
+exports, the website can read inventory from it. If not, moving
 to Shopify + Shopify POS gives unified inventory and checkout. In both cases
 the website code stays largely the same.
 
@@ -592,12 +594,14 @@ the website code stays largely the same.
 
 ---
 
-## Remaining questions (none block Phase 1)
+## Remaining questions
 
-1. **Which POS system** do you use, and can it export products/SKUs to CSV? (Affects
+1. **Ocean Bank POS export:** can it export products/SKUs (CSV/Excel)? (Affects
    the seed import and the long-term inventory plan.)
-2. **Store details:** address, hours, and how to describe the local delivery area.
+2. **Store details:** address, hours, phone/email, and how to describe the
+   local delivery area. These go in `src/lib/config/site.ts`; the site hides each
+   item until it's filled in.
 3. **Domain** for the site (needed for sitemap, canonical URLs and WhatsApp links).
-4. **Photos:** do you have existing product photos, or will they be shot new? Is
-   a Cloudinary account OK? It's free to start.
-5. **Logo / brand colors** for the Flash Electronics International identity.
+4. **Photos:** none yet. They'll be shot new, following the photography standard in §5.
+   Phase 2 can start with placeholder images. Is a Cloudinary account OK? It's free to start.
+5. **Logo:** the site uses a text wordmark until a logo file exists.

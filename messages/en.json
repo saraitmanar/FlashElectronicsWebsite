@@ -1,0 +1,89 @@
+{
+  "Metadata": {
+    "title": "Wholesale & Retail Merchandise in Miami",
+    "description": "Clothing, home goods, curtains, bedding, perfumes and household products from many brands. Wholesale for stores and resellers, retail for everyone. Store pickup and local delivery in Miami."
+  },
+  "Nav": {
+    "home": "Home",
+    "products": "Products",
+    "howToOrder": "How to order",
+    "about": "About us",
+    "contact": "Contact"
+  },
+  "Header": {
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "menu": "Menu",
+    "mainNav": "Main navigation",
+    "chatWhatsApp": "Chat on WhatsApp"
+  },
+  "LanguageSwitcher": {
+    "label": "Language",
+    "en": "English",
+    "es": "Español"
+  },
+  "SpanishBanner": {
+    "text": "¿Prefiere ver el sitio en español?",
+    "action": "Ver en español",
+    "dismiss": "Cerrar"
+  },
+  "WhatsApp": {
+    "fabLabel": "Chat with us on WhatsApp",
+    "defaultMessage": "Hello! I have a question about your products."
+  },
+  "Footer": {
+    "tagline": "Wholesale and retail merchandise from many brands, family-owned in Miami.",
+    "contactHeading": "Contact",
+    "servicesHeading": "Pickup & delivery",
+    "linksHeading": "Explore",
+    "whatsapp": "WhatsApp",
+    "pickup": "Store pickup",
+    "delivery": "Local delivery",
+    "rights": "© {year} {name}. All rights reserved.",
+    "brandsNote": "Product brands and trademarks belong to their respective owners."
+  },
+  "Home": {
+    "eyebrow": "Family-owned in Miami",
+    "title": "Wholesale & retail merchandise for stores, resellers and families",
+    "subtitle": "Clothing, home goods, curtains, bedding, perfumes, household products and more, from many brands. Browse the catalog, build your list and send it to us on WhatsApp.",
+    "ctaBrowse": "Browse products",
+    "ctaWhatsApp": "Chat on WhatsApp",
+    "trust": {
+      "wholesaleTitle": "Wholesale & retail",
+      "wholesaleBody": "Bulk orders for businesses, single items for everyone.",
+      "brandsTitle": "Many brands",
+      "brandsBody": "A wide selection of merchandise from trusted brands.",
+      "pickupTitle": "Store pickup",
+      "pickupBody": "Pick up your order at our Miami store.",
+      "deliveryTitle": "Local delivery",
+      "deliveryBody": "We can deliver within our local area."
+    },
+    "categoriesTitle": "What we carry",
+    "categories": {
+      "clothing": "Clothing",
+      "bedding": "Bedding",
+      "curtains": "Curtains",
+      "homeGoods": "Home goods",
+      "perfumes": "Perfumes",
+      "household": "Household products"
+    },
+    "stepsTitle": "How ordering works",
+    "steps": {
+      "browseTitle": "Browse",
+      "browseBody": "Find products and choose colors, sizes and quantities.",
+      "listTitle": "Build your list",
+      "listBody": "Add everything you need to your inquiry list.",
+      "sendTitle": "Send on WhatsApp",
+      "sendBody": "Send your list in one tap. We reply with pricing and availability."
+    },
+    "pricingTitle": "Pricing on request",
+    "pricingBody": "Prices depend on quantity and whether you buy retail or wholesale. Send us your list and we'll reply with a quote.",
+    "ctaTitle": "Have a question or a large order?",
+    "ctaBody": "Message us on WhatsApp. We speak English and Spanish."
+  },
+  "NotFound": {
+    "title": "Page not found",
+    "body": "The page you're looking for doesn't exist or has moved.",
+    "backHome": "Back to home"
+  }
+}
