@@ -10,7 +10,8 @@ import { normalizeCatalog, type NormalizeResult, type RawContent } from "./norma
 export const CONTENT_DIR = path.join(process.cwd(), "content");
 export const MANIFEST_FILE = path.join(CONTENT_DIR, "images.manifest.json");
 
-const rel = (file: string) => path.relative(process.cwd(), file);
+// Forward slashes on every OS, so messages look the same on Windows.
+const rel = (file: string) => path.relative(process.cwd(), file).split(path.sep).join("/");
 
 function readYaml(file: string) {
   try {

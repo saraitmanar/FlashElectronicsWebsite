@@ -160,6 +160,19 @@ describe("normalizeCatalog", () => {
     expect(messages).toMatch(/colour/);
   });
 
+  it("accepts Windows paths when checking that the file name matches the slug", () => {
+    const { errors } = normalizeCatalog({
+      ...raw([]),
+      products: [{ file: "content\\products\\comforter-set.yaml", data: baseProduct }],
+    });
+    expect(errors).toEqual([]);
+    const wrong = normalizeCatalog({
+      ...raw([]),
+      products: [{ file: "content\\products\\wrong.yaml", data: baseProduct }],
+    });
+    expect(wrong.errors[0].message).toMatch(/rename it to comforter-set.yaml/);
+  });
+
   it("blocks TODO text on active products only", () => {
     const todo = { ...baseProduct, description: { en: "TODO: describe" } };
     expect(normalizeCatalog(raw([todo])).errors[0].message).toMatch(/TODO/);

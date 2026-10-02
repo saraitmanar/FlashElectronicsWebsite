@@ -122,7 +122,9 @@ export function normalizeCatalog(raw: RawContent): NormalizeResult {
     if (!input) continue;
 
     const expectedFile = `${input.slug}.yaml`;
-    if (!file.endsWith(`/${expectedFile}`) && file !== expectedFile) {
+    // Works with both "/" and Windows "\\" path separators.
+    const fileName = file.split(/[\\/]/).pop();
+    if (fileName !== expectedFile) {
       error(file, `file name must match the slug: rename it to ${expectedFile}`);
     }
     if (products.some((p) => p.id === input.id)) error(file, `duplicate product id "${input.id}"`);
