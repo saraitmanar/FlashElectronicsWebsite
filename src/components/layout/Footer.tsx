@@ -96,14 +96,14 @@ export async function Footer() {
                 {t("pickup")}
               </li>
             )}
-            {fulfillment.localDelivery.enabled && (
+            {fulfillment.delivery.enabled && (
               <li className="inline-flex items-start gap-2">
                 <Truck className="mt-0.5 size-4 shrink-0 text-accent" aria-hidden="true" />
                 <span>
                   {t("delivery")}
-                  {fulfillment.localDelivery.areaDescription && (
+                  {fulfillment.delivery.areaDescription && (
                     <span className="block text-xs opacity-80">
-                      {localize(fulfillment.localDelivery.areaDescription, locale)}
+                      {localize(fulfillment.delivery.areaDescription, locale)}
                     </span>
                   )}
                 </span>

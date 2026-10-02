@@ -1,7 +1,7 @@
 {
   "Metadata": {
     "title": "Wholesale & Retail Merchandise in Miami",
-    "description": "Clothing, home goods, curtains, bedding, perfumes and household products. Wholesale for stores and resellers, retail for everyone. Store pickup and delivery in Miami."
+    "description": "Clothing, home goods, curtains, bedding, perfumes and household products. Wholesale for stores and resellers, retail for everyone. Store pickup in Miami and delivery within the US."
   },
   "Nav": {
     "home": "Home",
@@ -32,7 +32,7 @@
     "defaultMessage": "Hello! I have a question about your products."
   },
   "Footer": {
-    "tagline": "Wholesale and retail merchandise from many brands, family-owned in Miami.",
+    "tagline": "Wholesale and retail merchandise. Family-owned in Miami.",
     "contactHeading": "Contact",
     "servicesHeading": "Pickup & delivery",
     "linksHeading": "Explore",

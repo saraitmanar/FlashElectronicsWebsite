@@ -21,7 +21,7 @@ reserved in the design.
 | 5 | POS/inventory | No inventory sync in v1. SKUs/variants are designed so a POS or inventory system can be connected later. **Use POS SKUs on variants wherever possible.** | §4 `Variant.sku`, §9 |
 | 6 | WhatsApp | One WhatsApp Business number for wholesale and retail. | §1 config `contact.whatsapp` |
 | 7 | Branding | Flash Electronics International is the **store identity**. Products carry their **own brand** (optional). Merchandise is never presented as Flash-branded. | §4 `Brand`, brand filter, JSON-LD in §SEO |
-| 8 | Fulfillment | **Store pickup or local delivery**, both explained on the site and chosen in the inquiry. No rates, no checkout logistics. | §2 `/how-to-order`, §6 inquiry form, config `fulfillment` |
+| 8 | Fulfillment | **Store pickup in Miami or delivery within the US**, both explained on the site and chosen in the inquiry. No shipping-rate calculation or checkout logistics; cost and timing are confirmed on WhatsApp. | §2 `/how-to-order`, §6 inquiry form, config `fulfillment` |
 | 9 | Visual identity | Blue-and-yellow identity, refined: **deep navy primary, muted warm gold accent** used sparingly for CTAs/highlights (never large backgrounds), **warm off-white page background, white cards, charcoal text**. All colors are centralized design tokens. | `src/app/globals.css` `@theme`, README "Design tokens" |
 | 10 | POS | The store uses an **Ocean Bank POS**. Whether it can export products/SKUs is not yet known. | §8 one-time seed, §9 |
 
@@ -93,7 +93,7 @@ export const siteConfig = {
   },
   fulfillment: {
     pickup: true,
-    localDelivery: { enabled: true, areaDescription: { en: "…", es: "…" } },
+    delivery: { enabled: true, areaDescription: { en: "Within the US", es: "Dentro de Estados Unidos" } },
   },
   features: {
     checkout: false,                   // reserved
@@ -164,14 +164,14 @@ English URLs have no prefix. Spanish URLs start with `/es`.
 
 | Route (EN) | Spanish | Purpose |
 |---|---|---|
-| `/` | `/es` | Home: hero with WhatsApp CTA, category tiles, new arrivals, featured brands, trust strip ("Retail & wholesale · Pickup in Miami · Local delivery") |
+| `/` | `/es` | Home: hero with WhatsApp CTA, category tiles, new arrivals, featured brands, trust strip ("Retail & wholesale · Pickup in Miami · Delivery within the US") |
 | `/products` | `/es/products` | All products, filterable by category, brand, color, tag |
 | `/categories/[...slug]` | `/es/categories/…` | Category/subcategory pages (e.g. `home-goods/curtains`) |
 | `/brands/[slug]` | `/es/brands/…` | Brand landing pages (good for searches like "*brand* wholesale Miami") |
 | `/products/[slug]` | `/es/products/…` | Product detail |
 | `/search?q=` | `/es/search?q=` | Search results |
 | `/inquiry` | `/es/inquiry` | Inquiry list → WhatsApp |
-| `/how-to-order` | `/es/how-to-order` | Retail vs. wholesale, minimum order value (when configured), case/pack items, **store pickup & local delivery**, step-by-step WhatsApp ordering |
+| `/how-to-order` | `/es/how-to-order` | Retail vs. wholesale, minimum order value (when configured), case/pack items, **store pickup & US delivery**, step-by-step WhatsApp ordering |
 | `/about` | `/es/about` | Family business story, store photos |
 | `/contact` | `/es/contact` | WhatsApp, phone, address + map, hours |
 | `/faq` | `/es/faq` | FAQ (FAQPage JSON-LD) |
@@ -368,7 +368,7 @@ Product page → choose color/size → quantity → "Add to inquiry"   (toast: "
    Details (all optional except type):
    • I'm buying for: ( ) Myself / retail   ( ) My business / wholesale
    • Business name (wholesale), name, city/ZIP
-   • Fulfillment: ( ) Pickup at store   ( ) Local delivery (+ address area)
+   • Fulfillment: ( ) Pickup at store   ( ) Delivery (+ city/state/ZIP)
    • Notes
 ```
 
@@ -412,7 +412,7 @@ Ref: FL-7K3Q · Wholesale inquiry
 2) …
 
 Business: Tienda La Esquina · Hialeah
-Fulfillment: Local delivery (Hialeah, 33012)
+Fulfillment: Delivery (Orlando, FL 32801)
 Notes: …
 ```
 
@@ -598,8 +598,7 @@ the website code stays largely the same.
 
 1. **Ocean Bank POS export:** can it export products/SKUs (CSV/Excel)? (Affects
    the seed import and the long-term inventory plan.)
-2. **Store details:** address, hours, phone/email, and how to describe the
-   local delivery area. These go in `src/lib/config/site.ts`; the site hides each
+2. **Store details:** address, hours and phone/email. These go in `src/lib/config/site.ts`; the site hides each
    item until it's filled in.
 3. **Domain** for the site (needed for sitemap, canonical URLs and WhatsApp links).
 4. **Photos:** none yet. They'll be shot new, following the photography standard in §5.

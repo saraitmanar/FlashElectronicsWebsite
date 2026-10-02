@@ -49,9 +49,11 @@ export const siteConfig = {
 
   fulfillment: {
     pickup: true,
-    localDelivery: {
+    // Delivery within the US. No shipping-rate calculation in v1; cost and
+    // timing are confirmed on WhatsApp.
+    delivery: {
       enabled: true,
-      areaDescription: null as null | Localized,
+      areaDescription: { en: "Within the US", es: "Dentro de Estados Unidos" } as null | Localized,
     },
   },
 

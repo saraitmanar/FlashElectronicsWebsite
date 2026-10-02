@@ -1,7 +1,7 @@
 {
   "Metadata": {
     "title": "Mercancía al por mayor y al detal en Miami",
-    "description": "Ropa, artículos para el hogar, cortinas, ropa de cama, perfumes y productos del hogar. Al por mayor para tiendas y revendedores, al detal para todos. Recogida en tienda y entrega en US."
+    "description": "Ropa, artículos para el hogar, cortinas, ropa de cama, perfumes y productos del hogar. Al por mayor para tiendas y revendedores, al detal para todos. Recogida en tienda en Miami y entregas dentro de Estados Unidos."
   },
   "Nav": {
     "home": "Inicio",
@@ -38,7 +38,7 @@
     "linksHeading": "Explorar",
     "whatsapp": "WhatsApp",
     "pickup": "Recogida en tienda",
-    "delivery": "Entrega a todo US",
+    "delivery": "Entregas",
     "rights": "© {year} {name}. Todos los derechos reservados.",
     "brandsNote": "Las marcas de los productos pertenecen a sus respectivos dueños."
   },
@@ -55,7 +55,7 @@
       "brandsBody": "Una amplia selección de mercancía de marcas confiables.",
       "pickupTitle": "Recogida en tienda",
       "pickupBody": "Recoge tu pedido en nuestra tienda en Miami.",
-      "deliveryTitle": "Entrega local",
+      "deliveryTitle": "Entregas",
       "deliveryBody": "Hacemos entregas dentro de los Estados Unidos."
     },
     "categoriesTitle": "Lo que vendemos",
@@ -77,7 +77,7 @@
       "sendBody": "Envía tu lista con un toque. Te respondemos con precios y disponibilidad."
     },
     "pricingTitle": "Precios a consultar",
-    "pricingBody": "Los precios dependen de la cantidad y de si compras al detal o al por mayor. Envíanos tu lista y te respondemos con una cotización.",
+    "pricingBody": "Los precios dependen de la cantidad. Envíanos tu lista y te respondemos con una cotización.",
     "ctaTitle": "¿Tienes una pregunta o un pedido grande?",
     "ctaBody": "Escríbenos por WhatsApp. Hablamos español e inglés."
   },
