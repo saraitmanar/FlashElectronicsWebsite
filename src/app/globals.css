@@ -88,3 +88,10 @@
     background: rgb(12 20 38 / 0.5);
   }
 }
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

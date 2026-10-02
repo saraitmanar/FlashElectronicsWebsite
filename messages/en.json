@@ -77,5 +77,51 @@
     "title": "Page not found",
     "body": "The page you're looking for doesn't exist or has moved.",
     "backHome": "Back to home"
+  },
+  "Catalog": {
+    "allProducts": "All products",
+    "allProductsIntro": "Browse our catalog and message us on WhatsApp for prices and availability.",
+    "productCount": "{count, plural, =0 {No products} one {# product} other {# products}}",
+    "categoriesLabel": "Categories",
+    "all": "All",
+    "emptyTitle": "No products here yet",
+    "emptyBody": "We add new merchandise regularly. Ask us on WhatsApp about what you're looking for.",
+    "askForPrice": "Ask for price",
+    "draft": "Draft",
+    "moreColors": "+{count}",
+    "colorCount": "{count, plural, one {# color} other {# colors}}",
+    "photoComingSoon": "Photo coming soon",
+    "breadcrumb": "Breadcrumb",
+    "home": "Home",
+    "brandTitle": "{brand} products",
+    "newArrivals": "New arrivals",
+    "viewAll": "View all products"
+  },
+  "Packaging": {
+    "pack": "Pack of {count}",
+    "case": "Case of {count}",
+    "packNoCount": "Sold by the pack",
+    "caseNoCount": "Sold by the case",
+    "set": "Sold as a set",
+    "dozen": "Sold by the dozen",
+    "step": "Order in multiples of {step}",
+    "min": "Minimum order: {count}"
+  },
+  "Product": {
+    "sku": "SKU",
+    "priceNote": "Prices depend on quantity. Message us for a quote.",
+    "unavailable": "Currently unavailable. Ask us about restocking.",
+    "unavailableOption": "{label} (unavailable)",
+    "askWhatsApp": "Ask about this product",
+    "whatsappMessage": "Hello! I'm interested in this product:\n{name}\nSKU: {sku}",
+    "description": "Description",
+    "details": "Details",
+    "related": "You may also like",
+    "photos": "Product photos",
+    "showPhoto": "Show photo {index} of {total}",
+    "previousPhoto": "Previous photo",
+    "nextPhoto": "Next photo",
+    "draftNotice": "Draft: visible on preview links only. It won't appear on the live site until its status is set to active.",
+    "pickupDelivery": "Store pickup in Miami or delivery within the US."
   }
 }

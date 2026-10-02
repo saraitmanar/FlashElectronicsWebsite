@@ -19,12 +19,13 @@ import {
 import type { Metadata } from "next";
 import { hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { ProductGrid } from "@/components/catalog/ProductGrid";
 import { buttonClasses } from "@/components/ui/button";
 import { Container } from "@/components/ui/Container";
 import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
-import { catalog } from "@/lib/catalog";
+import { catalog, sortByNewest } from "@/lib/catalog";
 import { localize } from "@/lib/i18n/localized";
 import { buildWhatsAppUrl } from "@/lib/inquiry/whatsapp";
 import { alternatesFor } from "@/lib/seo/metadata";
@@ -67,8 +68,14 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
   const t = await getTranslations("Home");
   const tWhatsApp = await getTranslations("WhatsApp");
   const whatsappUrl = buildWhatsAppUrl(tWhatsApp("defaultMessage"));
-  // Category tiles become links to category pages in Phase 3.
-  const topCategories = (await catalog.listCategories()).filter((c) => !c.parentId);
+  const tCatalog = await getTranslations("Catalog");
+  const [categories, products, brands] = await Promise.all([
+    catalog.listCategories(),
+    catalog.listProducts(),
+    catalog.listBrands(),
+  ]);
+  const topCategories = categories.filter((c) => !c.parentId);
+  const newArrivals = sortByNewest(products).slice(0, 8);
 
   return (
     <>
@@ -130,20 +137,43 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
             {topCategories.map((category) => {
               const Icon = categoryIcons[category.id] ?? Package;
               return (
-                <li
-                  key={category.id}
-                  className="flex flex-col items-center gap-3 rounded-xl border border-line bg-surface px-3 py-6 text-center shadow-xs"
-                >
-                  <Icon className="size-8 text-primary" strokeWidth={1.5} aria-hidden="true" />
-                  <span className="text-sm font-medium text-ink">
-                    {localize(category.name, locale)}
-                  </span>
+                <li key={category.id}>
+                  <Link
+                    href={`/categories/${category.id}`}
+                    className="flex h-full flex-col items-center gap-3 rounded-xl border border-line bg-surface px-3 py-6 text-center shadow-xs transition-colors hover:border-primary"
+                  >
+                    <Icon className="size-8 text-primary" strokeWidth={1.5} aria-hidden="true" />
+                    <span className="text-sm font-medium text-ink">
+                      {localize(category.name, locale)}
+                    </span>
+                  </Link>
                 </li>
               );
             })}
           </ul>
         </Container>
       </section>
+
+      {/* New arrivals (hidden until there are products) */}
+      {newArrivals.length > 0 && (
+        <section className="border-t border-line">
+          <Container className="py-14 sm:py-16">
+            <div className="mb-6 flex items-end justify-between gap-4">
+              <h2 className="text-2xl font-bold tracking-tight text-primary">
+                {tCatalog("newArrivals")}
+              </h2>
+              <Link
+                href="/products"
+                className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline"
+              >
+                {tCatalog("viewAll")}
+                <ArrowRight className="size-4" aria-hidden="true" />
+              </Link>
+            </div>
+            <ProductGrid products={newArrivals} brands={brands} />
+          </Container>
+        </section>
+      )}
 
       {/* How ordering works */}
       <section className="bg-canvas-deep">

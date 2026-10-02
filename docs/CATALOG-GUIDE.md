@@ -113,7 +113,7 @@ The wholesale minimum is an **order total**, set in
 |---|---|---|
 | `draft` | hidden | shown |
 | `active` | shown | shown |
-| `archived` | removed from listings; its link will redirect to its category (Phase 3) | same |
+| `archived` | removed from listings; its old link redirects to its main category | same |
 
 A product marked `active` can't contain the word `TODO`, so a half-written
 description can't go live by accident.

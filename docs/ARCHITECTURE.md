@@ -1,7 +1,7 @@
 # Architecture Proposal — Wholesale Catalog Site (v1)
 
-Status: **Approved.** Phase 1 (foundation) is implemented. Later phases follow
-the plan below.
+Status: **Approved.** Phases 1–3 (foundation, catalog data, catalog pages)
+are implemented. Later phases follow the plan below.
 
 Goal of v1: a fast, image-first, bilingual (EN/ES) catalog for Flash Electronics
 International that turns browsing into WhatsApp conversations. No payments,
@@ -610,6 +610,26 @@ the website code stays largely the same.
   invalid content, so bad data never deploys. Active products can't contain
   "TODO" text.
 - Step-by-step instructions for the maintainer: `docs/CATALOG-GUIDE.md`.
+
+## Phase 3 implementation notes
+
+- Pages: `/products`, `/categories/[...path]`, `/brands/[slug]` (only brands
+  with products on the site) and `/products/[slug]`. All are static, and
+  unknown slugs are 404s (`dynamicParams = false`).
+- The product page renders the default variant in static HTML. A shared link
+  like `?color=gray&bed-size=king` is applied right after load, and changing
+  options updates the URL with `history.replaceState`, so links can be shared.
+- The gallery shows the selected color's photos first, then general photos.
+  It is swipeable on phones (CSS scroll snap), with thumbnails and arrows on
+  larger screens.
+- "Ask about this product" opens WhatsApp with the product, the selected
+  options, the SKU and the exact page URL. "Add to inquiry" arrives in Phase 4.
+- Archived products return a permanent redirect to their main category.
+  Draft product pages carry `noindex` and a visible draft notice.
+- JSON-LD: `Product` (product's own brand, SKU, images; no `offers` while
+  prices are hidden) and `BreadcrumbList`. The sitemap lists categories,
+  brands and active products in both languages.
+- Not yet: swapping the card image when hovering color dots, and photo zoom.
 
 ## Remaining questions
 

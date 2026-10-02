@@ -34,6 +34,9 @@ export const localCatalog: CatalogRepository = {
   async listProducts() {
     return catalog().products.filter((p) => isVisible(p));
   },
+  async listArchivedProducts() {
+    return catalog().products.filter((p) => p.status === "archived");
+  },
   async getProductBySlug(slug) {
     const product = catalog().products.find((p) => p.slug === slug);
     if (!product) return null;
