@@ -1,0 +1,24 @@
+id: p_0006
+slug: calista-embroidered-curtain-panel
+status: draft # change to "active" when ready to publish
+brand: glory-home-design
+categories: [curtains]
+name:
+  en: "Calista Embroidered Curtain Panel with Attached Valance"
+  es: "Panel de cortina bordado Calista con cenefa integrada"
+description:
+  en: |
+    Textured cream curtain panel with large floral embroidery and an attached
+    decorative valance with a scalloped edge. Panel 54" × 84", plus an 18"
+    valance. One panel per package.
+  es: |
+    Panel de cortina color crema con textura, bordado floral grande y cenefa
+    decorativa integrada con borde festoneado. Panel de 54" × 84", más cenefa
+    de 18". Un panel por paquete.
+skuPrefix: CUR-CAL
+options:
+  color: [silver]
+# variants: # exceptions only, e.g.
+#   - match: { color: silver }
+#     available: false
+createdAt: 2026-10-18

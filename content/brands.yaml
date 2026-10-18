@@ -3,3 +3,6 @@
 
 - id: example-brand
   name: Example Brand # placeholder used by sample products; replace or delete
+
+- id: glory-home-design
+  name: Glory Home Design
