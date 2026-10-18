@@ -29,7 +29,7 @@ export function ProductCard({
       href={`/products/${product.slug}`}
       className="group flex h-full flex-col overflow-hidden rounded-xl border border-line bg-surface shadow-xs transition-shadow hover:shadow-md"
     >
-      <div className="relative aspect-[4/5] overflow-hidden bg-surface">
+      <div className="relative aspect-product overflow-hidden bg-surface">
         {image ? (
           <CatalogImage
             image={image}

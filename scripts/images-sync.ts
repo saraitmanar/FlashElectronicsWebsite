@@ -4,8 +4,11 @@
  * Processes product photos from photos/<product-slug>/ and records them in
  * content/images.manifest.json (commit that file).
  *
- *  - Auto-rotates, resizes to max 2000 px on the long edge, converts to JPEG
- *    on a white background, and creates a tiny blur placeholder.
+ *  - Every photo comes out the same size (PHOTO_SIZE, 4:5) as a JPEG on
+ *    white. White-background photos are trimmed to the product and centered
+ *    with an even margin; lifestyle/detail photos fill the frame instead
+ *    (see src/lib/catalog/photo-format.ts). Also creates a tiny blur
+ *    placeholder.
  *  - Unchanged photos are skipped (content hash), so re-running is cheap.
  *  - Destination: Cloudinary when CLOUDINARY_URL is set (in .env.local),
  *    otherwise public/catalog/<slug>/ (committed with the site).
@@ -18,21 +21,22 @@
 import { createHash } from "node:crypto";
 import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import path from "node:path";
-import sharp from "sharp";
+import sharp, { type Sharp } from "sharp";
 import {
   imageManifestSchema,
   type ImageManifest,
   type ManifestImage,
 } from "@/lib/catalog/authoring-schema";
 import { loadCatalogFromDisk, MANIFEST_FILE } from "@/lib/catalog/load-content";
+import { FULL_BLEED_NAMES, PHOTO_MARGIN, PHOTO_SIZE } from "@/lib/catalog/photo-format";
 
 const ROOT = process.cwd();
 const PHOTOS_DIR = path.join(ROOT, "photos");
 const LOCAL_OUT_DIR = path.join(ROOT, "public", "catalog");
 const SUPPORTED = new Set([".jpg", ".jpeg", ".png", ".webp", ".avif", ".tif", ".tiff"]);
-const MAX_EDGE = 2000;
 // Bump when processing settings change so every photo is re-processed.
-const PROCESSING_VERSION = "v1";
+const PROCESSING_VERSION = `v2-${PHOTO_SIZE.width}x${PHOTO_SIZE.height}-${PHOTO_MARGIN}`;
+const WHITE = { r: 255, g: 255, b: 255, alpha: 1 };
 
 if (existsSync(path.join(ROOT, ".env.local"))) process.loadEnvFile(path.join(ROOT, ".env.local"));
 const cloudinary = parseCloudinaryUrl(process.env.CLOUDINARY_URL);
@@ -56,11 +60,38 @@ function cleanBaseName(file: string) {
     .replace(/-+/g, "-");
 }
 
-async function processPhoto(buffer: Buffer) {
-  const { data, info } = await sharp(buffer)
-    .rotate()
-    .resize({ width: MAX_EDGE, height: MAX_EDGE, fit: "inside", withoutEnlargement: true })
-    .flatten({ background: "#ffffff" })
+async function processPhoto(buffer: Buffer, fullBleed: boolean) {
+  // Upright and on white first (transparent PNGs from background-removal apps).
+  const upright = await sharp(buffer).rotate().flatten({ background: WHITE }).toBuffer();
+
+  let framed: Sharp;
+  if (fullBleed) {
+    framed = sharp(upright).resize(PHOTO_SIZE.width, PHOTO_SIZE.height, { fit: "cover" });
+  } else {
+    // Cut away the white around the product, then center it with an even margin.
+    const product = await sharp(upright)
+      .trim({ background: WHITE, threshold: 12 })
+      .toBuffer()
+      .catch(() => upright); // an all-white image has nothing to trim
+    const inner = {
+      width: Math.round(PHOTO_SIZE.width * (1 - 2 * PHOTO_MARGIN)),
+      height: Math.round(PHOTO_SIZE.height * (1 - 2 * PHOTO_MARGIN)),
+    };
+    const fitted = await sharp(product)
+      .resize({ ...inner, fit: "inside" })
+      .toBuffer({ resolveWithObject: true });
+    const left = Math.round((PHOTO_SIZE.width - fitted.info.width) / 2);
+    const top = Math.round((PHOTO_SIZE.height - fitted.info.height) / 2);
+    framed = sharp(fitted.data).extend({
+      left,
+      right: PHOTO_SIZE.width - fitted.info.width - left,
+      top,
+      bottom: PHOTO_SIZE.height - fitted.info.height - top,
+      background: WHITE,
+    });
+  }
+
+  const { data, info } = await framed
     .jpeg({ quality: 82, mozjpeg: true })
     .toBuffer({ resolveWithObject: true });
   const blur = await sharp(data).resize(16, 16, { fit: "inside" }).webp({ quality: 40 }).toBuffer();
@@ -163,7 +194,10 @@ async function main() {
         continue;
       }
 
-      const processed = await processPhoto(buffer);
+      const fullBleed = FULL_BLEED_NAMES.some(
+        (name) => base === name || base.startsWith(`${name}-`),
+      );
+      const processed = await processPhoto(buffer, fullBleed);
       let src: string;
       if (cloudinary) {
         src = await uploadToCloudinary(processed.data, `products/${slug}/${base}`);

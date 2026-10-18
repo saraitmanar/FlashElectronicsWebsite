@@ -16,6 +16,10 @@
  *   - ink:             body text (charcoal)
  */
 @theme {
+  /* Shape of every product photo frame. Keep in sync with PHOTO_SIZE in
+     src/lib/catalog/photo-format.ts (photos are saved at that size). */
+  --aspect-product: 4 / 5;
+
   /* Raw scales — Flash Electronics International navy & gold */
   --color-navy-50: #f3f5f9;
   --color-navy-100: #e3e8f0;

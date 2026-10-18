@@ -136,8 +136,19 @@ Then run:
 npm run images:sync
 ```
 
-It resizes photos (max 2000 px), fixes rotation, converts them to JPEG,
-makes a small blurred preview, and updates `content/images.manifest.json`.
+It fixes rotation and saves every photo at the same size (1600 × 2000,
+4:5) as a JPEG on white, so all photos line up on the site:
+
+- **White-background photos** are trimmed to the product and centered with
+  the same margin, so it doesn't matter how much empty space you left around
+  the product.
+- **`lifestyle-*` and `detail-*` photos** fill the whole frame instead
+  (cropped from the center), since room shots and close-ups usually have no
+  white background.
+
+It also makes a small blurred preview and updates
+`content/images.manifest.json`. The size and margin are set in
+`src/lib/catalog/photo-format.ts`.
 Photos that haven't changed are skipped. Deleting a photo from the folder
 and re-running removes it from the site. If a file name doesn't match any
 option, `content:check` warns you.
@@ -148,8 +159,10 @@ committed with the site, which is fine to start with. Switch to Cloudinary
 before the catalog gets large, then re-run `images:sync`. Commit
 `content/images.manifest.json` either way.
 
-**Photo tips:** use the same background and lighting for every product,
-portrait 4:5 framing, at least 2000 px on the long side, one front photo per
+**Photo tips:** use a pure white background (or clean it up in an app like
+Photoroom) and the same lighting for every product, at least 2000 px on the
+long side, JPEG or PNG (not iPhone HEIC: set Camera → Formats → Most
+Compatible), one front photo per
 color, plus detail and packaging shots.
 
 ## Categories and brands

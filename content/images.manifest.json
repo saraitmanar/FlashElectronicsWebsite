@@ -4,22 +4,22 @@
     "basic-crew-neck-t-shirt": [
       {
         "file": "black-1.jpg",
-        "hash": "f9f3ab29a13d2776",
+        "hash": "34774ef670445eb7",
         "src": "/catalog/basic-crew-neck-t-shirt/black-1.jpg",
-        "width": 1800,
+        "width": 1600,
         "height": 2000,
-        "blurDataURL": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAABQAgCdASoOABAAA4BaJaQATwBQLGIFmvtiaIAA/uvF3KJ+3AopYxv8pcsOYNgGZ29Ot4hVt+aStGOP/bHuik9nvi2/rsiKghvqh6+YbKRcm5XVBCPz7B5Nh07diu/Ba0AAAA==",
+        "blurDataURL": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAAAwAgCdASoNABAAA4BaJaQAD48Psl74O6kpIAD+9BT+j8eoOZRFP9yiU9pP+pgiz8Iwh+CVnIBl0tU0zha/7Ydp2Fkk+yHu+9iAlZ7P+c/j2wLzk1l7LtGyqvDTyoAA",
         "provider": "local"
       }
     ],
     "calista-embroidered-curtain-panel": [
       {
         "file": "silver-1.jpg",
-        "hash": "8b6ace0631cf2a08",
+        "hash": "8c3912b7befa07f7",
         "src": "/catalog/calista-embroidered-curtain-panel/silver-1.jpg",
-        "width": 1500,
+        "width": 1600,
         "height": 2000,
-        "blurDataURL": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAADwAQCdASoMABAAA4BaJZwAAvenwxqcZwAA/vZrc0V9pPNUuNPpKAQ/MhaeIEAKNb0tCqf6X2RTcAzFQnFAtzOSfo9lrUHjSXLIHQ4EbuahAAAA",
+        "blurDataURL": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAADQAQCdASoNABAAA4BaJZwAAvc1d/cmgAD+6Ki4PPnZgzsTbiwM5kBxbthVLa8DqgCV3URDoDcr5+KPXu+crvaZKa5PILHL6Ujz2KxMWjIXKeCF4CMCAA==",
         "provider": "local"
       }
     ]

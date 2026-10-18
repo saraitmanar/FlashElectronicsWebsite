@@ -22,7 +22,7 @@ export function ProductGallery({ images, locale }: { images: ProductImage[]; loc
 
   if (images.length === 0) {
     return (
-      <div className="aspect-[4/5] overflow-hidden rounded-xl border border-line">
+      <div className="aspect-product overflow-hidden rounded-xl border border-line">
         <ImagePlaceholder />
       </div>
     );
@@ -47,7 +47,7 @@ export function ProductGallery({ images, locale }: { images: ProductImage[]; loc
           className="no-scrollbar flex snap-x snap-mandatory overflow-x-auto"
         >
           {images.map((image, i) => (
-            <div key={image.id} className="relative aspect-[4/5] w-full shrink-0 snap-center">
+            <div key={image.id} className="relative aspect-product w-full shrink-0 snap-center">
               <CatalogImage
                 image={image}
                 locale={locale}
