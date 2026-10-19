@@ -1,17 +1,6 @@
 {
   "version": 1,
   "products": {
-    "basic-crew-neck-t-shirt": [
-      {
-        "file": "black-1.jpg",
-        "hash": "34774ef670445eb7",
-        "src": "/catalog/basic-crew-neck-t-shirt/black-1.jpg",
-        "width": 1600,
-        "height": 2000,
-        "blurDataURL": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAAAwAgCdASoNABAAA4BaJaQAD48Psl74O6kpIAD+9BT+j8eoOZRFP9yiU9pP+pgiz8Iwh+CVnIBl0tU0zha/7Ydp2Fkk+yHu+9iAlZ7P+c/j2wLzk1l7LtGyqvDTyoAA",
-        "provider": "local"
-      }
-    ],
     "calista-embroidered-curtain-panel": [
       {
         "file": "calista-white-blue.jpg",

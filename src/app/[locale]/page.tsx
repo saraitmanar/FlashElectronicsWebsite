@@ -129,30 +129,34 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
         </Container>
       </section>
 
-      {/* Categories */}
-      <section>
-        <Container className="py-14 sm:py-16">
-          <h2 className="text-2xl font-bold tracking-tight text-primary">{t("categoriesTitle")}</h2>
-          <ul className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-6">
-            {topCategories.map((category) => {
-              const Icon = categoryIcons[category.id] ?? Package;
-              return (
-                <li key={category.id}>
-                  <Link
-                    href={`/categories/${category.id}`}
-                    className="flex h-full flex-col items-center gap-3 rounded-xl border border-line bg-surface px-3 py-6 text-center shadow-xs transition-colors hover:border-primary"
-                  >
-                    <Icon className="size-8 text-primary" strokeWidth={1.5} aria-hidden="true" />
-                    <span className="text-sm font-medium text-ink">
-                      {localize(category.name, locale)}
-                    </span>
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </Container>
-      </section>
+      {/* Categories (only once there's more than one to choose from) */}
+      {topCategories.length > 1 && (
+        <section>
+          <Container className="py-14 sm:py-16">
+            <h2 className="text-2xl font-bold tracking-tight text-primary">
+              {t("categoriesTitle")}
+            </h2>
+            <ul className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-6">
+              {topCategories.map((category) => {
+                const Icon = categoryIcons[category.id] ?? Package;
+                return (
+                  <li key={category.id}>
+                    <Link
+                      href={`/categories/${category.id}`}
+                      className="flex h-full flex-col items-center gap-3 rounded-xl border border-line bg-surface px-3 py-6 text-center shadow-xs transition-colors hover:border-primary"
+                    >
+                      <Icon className="size-8 text-primary" strokeWidth={1.5} aria-hidden="true" />
+                      <span className="text-sm font-medium text-ink">
+                        {localize(category.name, locale)}
+                      </span>
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </Container>
+        </section>
+      )}
 
       {/* New arrivals (hidden until there are products) */}
       {newArrivals.length > 0 && (

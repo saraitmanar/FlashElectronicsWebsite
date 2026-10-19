@@ -1,6 +1,7 @@
 import { formatIssues, loadCatalogFromDisk } from "../load-content";
 import type { CatalogRepository } from "../repository";
 import type { Catalog } from "../types";
+import { nonEmptyCategories } from "../queries";
 import { isVisible } from "../visibility";
 
 let cached: Catalog | null = null;
@@ -18,12 +19,24 @@ function catalog(): Catalog {
   return catalog;
 }
 
+/**
+ * Categories without visible products are left out everywhere (home tiles,
+ * chips, category pages, sitemap) and come back once a product is added.
+ */
+function visibleCategories() {
+  const { categories, products } = catalog();
+  return nonEmptyCategories(
+    categories,
+    products.filter((p) => isVisible(p)),
+  );
+}
+
 export const localCatalog: CatalogRepository = {
   async listCategories() {
-    return catalog().categories;
+    return visibleCategories();
   },
   async getCategory(id) {
-    return catalog().categories.find((c) => c.id === id) ?? null;
+    return visibleCategories().find((c) => c.id === id) ?? null;
   },
   async listBrands() {
     return catalog().brands;

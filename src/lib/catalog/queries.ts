@@ -18,6 +18,11 @@ export function productsInCategory(
   return products.filter((p) => p.categoryIds.some((c) => ids.has(c)));
 }
 
+/** Categories that have at least one of `products`, directly or in a subcategory. */
+export function nonEmptyCategories(categories: Category[], products: Product[]): Category[] {
+  return categories.filter((c) => productsInCategory(products, categories, c.id).length > 0);
+}
+
 export function productsByBrand(products: Product[], brandId: string): Product[] {
   return products.filter((p) => p.brandId === brandId);
 }

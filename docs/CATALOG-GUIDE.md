@@ -87,9 +87,17 @@ it points to exactly one variant.
 - **Shared lists** (`content/options/*.yaml`): colors, clothing sizes and bed
   sizes. Define a value once (id, SKU code, English and Spanish name, swatch
   color) and reuse it in any product. Add a new color there first, then use it.
-- **One-off options** can be defined inside the product file. See
-  `blackout-curtain-panels.yaml` (panel size) and `all-purpose-cleaner-32oz.yaml`
-  (scent).
+- **One-off options** can be defined inside the product file:
+
+  ```yaml
+  options:
+    color: [ivory, gray]
+    panel-size:
+      name: { en: Panel size, es: Tamaño del panel }
+      values:
+        - { id: 52x63, code: "5263", label: { en: 52 × 63 in, es: 52 × 63 pulg } }
+        - { id: 52x84, code: "5284", label: { en: 52 × 84 in, es: 52 × 84 pulg } }
+  ```
 - A product can have up to 3 options. A product with no options (most
   perfumes) has a single variant whose SKU is the `skuPrefix`.
 
@@ -126,6 +134,7 @@ option value they show:
 | File name | Shown for |
 |---|---|
 | `navy-1.jpg`, `navy-2.jpg` | the navy variants (1, 2 = order) |
+| `cordelia-navy.jpg` | same as `navy-1.jpg` (the product's name in front is ignored) |
 | `navy-queen-1.jpg` | navy + queen only |
 | `main-1.jpg` | every variant, shown first |
 | `detail-1.jpg`, `lifestyle-1.jpg`, `pack-1.jpg`, `back-1.jpg` | every variant, after the color photos |
@@ -172,8 +181,3 @@ color, plus detail and packaging shots.
   safe; changing ids changes URLs.
 - `content/brands.yaml`: add each brand once, then reference it with `brand:`
   in product files.
-
-## Sample products
-
-The five products in `content/products/` are drafts created to build and test
-the site. Delete them, or replace their content, before launch.

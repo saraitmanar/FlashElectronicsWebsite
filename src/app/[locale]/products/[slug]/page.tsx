@@ -100,7 +100,9 @@ export default async function ProductPage({ params }: Props) {
   const product = await catalog.getProductBySlug(slug);
   if (!product) notFound();
   if (product.status === "archived") {
-    permanentRedirect(localizedPath(`/categories/${product.categoryIds[0]}`, locale));
+    // To its main category, or to all products if that category is now empty.
+    const category = await catalog.getCategory(product.categoryIds[0]);
+    permanentRedirect(localizedPath(category ? `/categories/${category.id}` : "/products", locale));
   }
 
   const t = await getTranslations("Product");
