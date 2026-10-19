@@ -1,0 +1,18 @@
+id: p_0008
+slug: delaney-embroidered-curtain-panel
+status: draft # change to "active" when ready to publish
+brand: glory-home-design
+categories: [curtains]
+name:
+  en: "Delaney Embroidered Curtain Panel with Attached Valance"
+  es: "Panel de cortina bordado Delaney con cenefa integrada"
+description:
+  en: |
+    Embroidered curtain panel with an attached decorative valance. Panel
+    54" × 84", plus an 18" valance. One panel per package.
+  es: |
+    Panel de cortina bordado con cenefa decorativa integrada. Panel de
+    54" × 84", más cenefa de 18". Un panel por paquete.
+skuPrefix: CUR-DEL
+# Colors are added from the photo names (gold-1.jpg → gold).
+createdAt: 2026-10-19
