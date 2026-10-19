@@ -1,0 +1,19 @@
+id: p_0010
+slug: katya-macrame-curtain-panel
+status: draft # change to "active" when ready to publish
+brand: glory-home-design
+categories: [curtains]
+name:
+  en: "Katya Macramé Curtain Panel with Attached Valance"
+  es: "Panel de cortina de macramé Katya con cenefa integrada"
+description:
+  en: |
+    Macramé curtain panel with floral embroidery and an attached valance.
+    Panel 55" × 84", plus an 18" valance. One panel per package.
+  es: |
+    Panel de cortina de macramé con bordado floral y cenefa integrada.
+    Panel de 55" × 84", más cenefa de 18". Un panel por paquete.
+skuPrefix: CUR-KAT
+options:
+  color: [blue, green, pink, yellow]
+createdAt: 2026-10-19

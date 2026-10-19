@@ -8,11 +8,12 @@ name:
   es: "Panel de cortina bordado Noa con cenefa integrada"
 description:
   en: |
-    Embroidered curtain panel with an attached decorative valance. Panel
-    54" × 84", plus an 18" valance. One panel per package.
+    From the Noa collection: embroidered curtain panel with an attached decorative valance.
+    Panel 54" × 84", plus an 18" valance. One panel per package.
   es: |
-    Panel de cortina bordado con cenefa decorativa integrada. Panel de
-    54" × 84", más cenefa de 18". Un panel por paquete.
+    De la colección Noa: panel de cortina bordado con cenefa decorativa integrada.
+    Panel de 54" × 84", más cenefa de 18". Un panel por paquete.
 skuPrefix: CUR-NOA
-# Colors are added from the photo names (gold-1.jpg → gold).
+options:
+  color: [white-green, white-pink]
 createdAt: 2026-10-19

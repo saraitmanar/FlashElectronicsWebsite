@@ -8,11 +8,12 @@ name:
   es: "Panel de cortina bordado Delaney con cenefa integrada"
 description:
   en: |
-    Embroidered curtain panel with an attached decorative valance. Panel
-    54" × 84", plus an 18" valance. One panel per package.
+    Embroidered floral curtain panel with an attached decorative valance.
+    Panel 54" × 84", plus an 18" valance. One panel per package.
   es: |
-    Panel de cortina bordado con cenefa decorativa integrada. Panel de
-    54" × 84", más cenefa de 18". Un panel por paquete.
+    Panel de cortina con bordado floral y cenefa decorativa integrada.
+    Panel de 54" × 84", más cenefa de 18". Un panel por paquete.
 skuPrefix: CUR-DEL
-# Colors are added from the photo names (gold-1.jpg → gold).
+options:
+  color: [brown]
 createdAt: 2026-10-19

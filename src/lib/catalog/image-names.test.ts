@@ -46,4 +46,17 @@ describe("parseImageName", () => {
   it("flags names that match nothing", () => {
     expect(parseImageName("naavy-1.jpg", options).kind).toBe("unknown");
   });
+
+  it("ignores a leading product name", () => {
+    expect(parseImageName("cordelia-navy.jpg", options, "cordelia")).toMatchObject({
+      base: "cordelia-navy",
+      kind: "tagged",
+      order: 1,
+      optionValues: { color: "navy" },
+    });
+    expect(parseImageName("cordelia-main-2.jpg", options, "cordelia")).toMatchObject({
+      kind: "main",
+      order: 2,
+    });
+  });
 });

@@ -21,6 +21,7 @@ values:
   - { id: green, code: GRN, label: { en: Green, es: Verde }, hex: "#3d7a46" }
   - { id: sage, code: SGE, label: { en: Sage, es: Verde salvia }, hex: "#a3b18a" }
   - { id: red, code: RED, label: { en: Red, es: Rojo }, hex: "#c0392b" }
+  - { id: maroon, code: MRN, label: { en: Maroon, es: Granate }, hex: "#7b2e2a" }
   - { id: burgundy, code: BRG, label: { en: Burgundy, es: Vino tinto }, hex: "#6d1f2c" }
   - { id: pink, code: PNK, label: { en: Pink, es: Rosado }, hex: "#f2b8c6" }
   - { id: purple, code: PRP, label: { en: Purple, es: Morado }, hex: "#6c4b8b" }
@@ -31,3 +32,39 @@ values:
   - { id: gold, code: GLD, label: { en: Gold, es: Dorado }, hex: "#c9a34e" }
   - { id: silver, code: SLV, label: { en: Silver, es: Plateado }, hex: "#c0c4c8" }
   - { id: multicolor, code: MLT, label: { en: Multicolor, es: Multicolor } }
+  # Two-tone: base color + accent (embroidery). hex2 splits the swatch diagonally.
+  - {
+      id: white-blue,
+      code: WBL,
+      label: { en: White / Blue, es: Blanco / Azul },
+      hex: "#f7f5ef",
+      hex2: "#3f5a9a",
+    }
+  - {
+      id: white-grey,
+      code: WGY,
+      label: { en: White / Gray, es: Blanco / Gris },
+      hex: "#f7f5ef",
+      hex2: "#8e9196",
+    }
+  - {
+      id: white-green,
+      code: WGN,
+      label: { en: White / Green, es: Blanco / Verde },
+      hex: "#f7f5ef",
+      hex2: "#5f8a5a",
+    }
+  - {
+      id: white-pink,
+      code: WPK,
+      label: { en: White / Pink, es: Blanco / Rosado },
+      hex: "#f7f5ef",
+      hex2: "#d98aa0",
+    }
+  - {
+      id: white-brown,
+      code: WBR,
+      label: { en: White / Brown, es: Blanco / Marrón },
+      hex: "#f7f5ef",
+      hex2: "#8a5a3c",
+    }

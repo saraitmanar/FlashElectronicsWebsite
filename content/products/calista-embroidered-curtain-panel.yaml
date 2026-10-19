@@ -8,17 +8,12 @@ name:
   es: "Panel de cortina bordado Calista con cenefa integrada"
 description:
   en: |
-    Textured cream curtain panel with large floral embroidery and an attached
-    decorative valance with a scalloped edge. Panel 54" × 84", plus an 18"
-    valance. One panel per package.
+    Textured curtain panel with large floral embroidery and an attached decorative valance with a scalloped edge.
+    Panel 54" × 84", plus an 18" valance. One panel per package.
   es: |
-    Panel de cortina color crema con textura, bordado floral grande y cenefa
-    decorativa integrada con borde festoneado. Panel de 54" × 84", más cenefa
-    de 18". Un panel por paquete.
+    Panel de cortina con textura, bordado floral grande y cenefa decorativa integrada con borde festoneado.
+    Panel de 54" × 84", más cenefa de 18". Un panel por paquete.
 skuPrefix: CUR-CAL
 options:
-  color: [silver]
-# variants: # exceptions only, e.g.
-#   - match: { color: silver }
-#     available: false
+  color: [white-blue, white-grey]
 createdAt: 2026-10-18

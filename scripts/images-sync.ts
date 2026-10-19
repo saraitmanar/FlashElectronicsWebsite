@@ -194,9 +194,10 @@ async function main() {
         continue;
       }
 
-      const fullBleed = FULL_BLEED_NAMES.some(
-        (name) => base === name || base.startsWith(`${name}-`),
-      );
+      // Names may start with the product's first word: "cordelia-lifestyle-1".
+      const prefix = `${slug.split("-")[0]}-`;
+      const name = base.startsWith(prefix) ? base.slice(prefix.length) : base;
+      const fullBleed = FULL_BLEED_NAMES.some((n) => name === n || name.startsWith(`${n}-`));
       const processed = await processPhoto(buffer, fullBleed);
       let src: string;
       if (cloudinary) {

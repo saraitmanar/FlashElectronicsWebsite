@@ -3,11 +3,10 @@
 import clsx from "clsx";
 import { useTranslations } from "next-intl";
 import type { Locale } from "@/i18n/routing";
+import { swatchBackground } from "@/lib/catalog/swatch";
 import type { Product } from "@/lib/catalog/types";
 import { isValueAvailable, type Selection } from "@/lib/catalog/variant-selection";
 import { localize } from "@/lib/i18n/localized";
-
-const MULTICOLOR = "conic-gradient(#e74c3c, #f1c40f, #2ecc71, #3498db, #9b59b6, #e74c3c)";
 
 /**
  * One radio group per option (keyboard friendly). Unavailable values stay
@@ -63,7 +62,7 @@ export function VariantSelector({
                           checked ? "ring-2 ring-primary" : "hover:ring-2 hover:ring-navy-200",
                           !available && "opacity-50",
                         )}
-                        style={{ background: value.swatch?.hex ?? MULTICOLOR }}
+                        style={{ background: swatchBackground(value.swatch) }}
                       >
                         {!available && (
                           <span className="absolute top-1/2 left-1/2 h-px w-[140%] -translate-x-1/2 -translate-y-1/2 -rotate-45 bg-ink" />

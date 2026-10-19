@@ -1,6 +1,7 @@
 import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
+import { swatchBackground } from "@/lib/catalog/swatch";
 import type { Brand, Product } from "@/lib/catalog/types";
 import { localize } from "@/lib/i18n/localized";
 import { CatalogImage } from "./CatalogImage";
@@ -68,11 +69,7 @@ export function ProductCard({
                 key={c.id}
                 title={localize(c.label, locale)}
                 className="size-3.5 rounded-full border border-black/15"
-                style={{
-                  background:
-                    c.swatch?.hex ??
-                    "conic-gradient(#e74c3c, #f1c40f, #2ecc71, #3498db, #9b59b6, #e74c3c)",
-                }}
+                style={{ background: swatchBackground(c.swatch) }}
               />
             ))}
             {colors.length > MAX_DOTS && (

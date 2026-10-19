@@ -257,7 +257,8 @@ function buildOptions(
 }
 
 function toOptionValue(v: OptionLibrary["values"][number]) {
-  return { id: v.id, code: v.code, label: v.label, swatch: v.hex ? { hex: v.hex } : undefined };
+  const swatch = v.hex ? { hex: v.hex, ...(v.hex2 && { hex2: v.hex2 }) } : undefined;
+  return { id: v.id, code: v.code, label: v.label, swatch };
 }
 
 function buildVariants(
@@ -325,7 +326,12 @@ function buildImages(
   file: string,
   warn: (file: string, message: string) => void,
 ): ProductImage[] {
-  const parsed = manifestImages.map((img) => ({ img, name: parseImageName(img.file, options) }));
+  // Photos may start with the product's first word: "cordelia-navy.jpg".
+  const prefix = input.slug.split("-")[0];
+  const parsed = manifestImages.map((img) => ({
+    img,
+    name: parseImageName(img.file, options, prefix),
+  }));
 
   for (const { img, name } of parsed) {
     if (name.kind === "unknown") {

@@ -32,11 +32,11 @@
         "provider": "local"
       }
     ],
-    "cordelia-embroidered-curtain-panel": [
+    "cordelia-rod-pocket-curtain-panel": [
       {
         "file": "cordelia-blue.jpg",
         "hash": "8e5ee50bebd98db9",
-        "src": "/catalog/cordelia-embroidered-curtain-panel/cordelia-blue.jpg",
+        "src": "/catalog/cordelia-rod-pocket-curtain-panel/cordelia-blue.jpg",
         "width": 1600,
         "height": 2000,
         "blurDataURL": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAADwAQCdASoNABAAA4BaJZwAAuEtUblVFAAA/vKF5WPVPm3EQNcN0tl3D/Sj8Oi7/winkBGogppgmcpE7IbH7mMHxP/wflcgdz+O/UNAXwKd6PaEq9wAAA==",
@@ -45,7 +45,7 @@
       {
         "file": "cordelia-gold.jpg",
         "hash": "5c418173f2f95624",
-        "src": "/catalog/cordelia-embroidered-curtain-panel/cordelia-gold.jpg",
+        "src": "/catalog/cordelia-rod-pocket-curtain-panel/cordelia-gold.jpg",
         "width": 1600,
         "height": 2000,
         "blurDataURL": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAAAQAgCdASoNABAAA4BaJQBdgCIj2XWNsETgAP73Pp2MYnbCdgZ9kkkFsZ60lcdVI9cXj2OhT0MX4jPGoaaDOz2Rn4d4VR/9tGU7P/3PEDgr54xzFKOtLEoYpG8gAA==",
@@ -54,7 +54,7 @@
       {
         "file": "cordelia-green.jpg",
         "hash": "4786b7d6a18ec3b2",
-        "src": "/catalog/cordelia-embroidered-curtain-panel/cordelia-green.jpg",
+        "src": "/catalog/cordelia-rod-pocket-curtain-panel/cordelia-green.jpg",
         "width": 1600,
         "height": 2000,
         "blurDataURL": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAADQAQCdASoNABAAA4BaJYgAAuEoksvvQAD+8o0mWPR5e39ivqpAAPQG0lW514KHZG/WF7TzuWafoXZm1lQrY3AMK/lB8eiPTthe2DfkS5djCXF2YS8AAA==",
@@ -63,7 +63,7 @@
       {
         "file": "cordelia-maroon.jpg",
         "hash": "d915550f0cd273c0",
-        "src": "/catalog/cordelia-embroidered-curtain-panel/cordelia-maroon.jpg",
+        "src": "/catalog/cordelia-rod-pocket-curtain-panel/cordelia-maroon.jpg",
         "width": 1600,
         "height": 2000,
         "blurDataURL": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAABwAgCdASoNABAAA4BaJYgC7H8AgpS/2OUmPU7gAP7uaoXEu6xwTFF8djq7Era0ihGhxYAqkucKZaUsamAlg5NCP2P7qV1ARzfqqTrKDc3fHJggdjWN/xbA+UjKLvtEkEEhf5yyx9zN96v0EHSwMAAA",
@@ -72,7 +72,7 @@
       {
         "file": "cordelia-purple.jpg",
         "hash": "bf00e745d601afb9",
-        "src": "/catalog/cordelia-embroidered-curtain-panel/cordelia-purple.jpg",
+        "src": "/catalog/cordelia-rod-pocket-curtain-panel/cordelia-purple.jpg",
         "width": 1600,
         "height": 2000,
         "blurDataURL": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAABQAgCdASoNABAAA4BaJQBdgMX632f0n9FaieAA/u5qhcnS67IbkTr7k3VrWtYiUViqMSOCqFWsSVdMWZO956blVIiqQVTFIHr0awxWeY1Y8yqdIeTG74DV6fsLA4x49yc+MY0pwAA=",
@@ -81,7 +81,7 @@
       {
         "file": "cordelia-red.jpg",
         "hash": "c9590fb64e5dac5e",
-        "src": "/catalog/cordelia-embroidered-curtain-panel/cordelia-red.jpg",
+        "src": "/catalog/cordelia-rod-pocket-curtain-panel/cordelia-red.jpg",
         "width": 1600,
         "height": 2000,
         "blurDataURL": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAABwAgCdASoNABAAA4BaJbAC7AYuvvuQdb8Kbu2AAP70Ek0qMnLTW37LIX99d/Xl5+6LstvMxUcn/wep6PMj+s1sdSn6lQIIwj+ElPjtNtjk9vID+rebqocOTLh5JPpH+IcjYH8xjIZdiwm34Zns7RQAAAA=",
@@ -99,11 +99,11 @@
         "provider": "local"
       }
     ],
-    "jemina-embroidered-curtain-panel": [
+    "jemina-macrame-curtain-panel": [
       {
         "file": "jemina-blue.jpg",
         "hash": "5b2315ea882bfa8a",
-        "src": "/catalog/jemina-embroidered-curtain-panel/jemina-blue.jpg",
+        "src": "/catalog/jemina-macrame-curtain-panel/jemina-blue.jpg",
         "width": 1600,
         "height": 2000,
         "blurDataURL": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAAAQAgCdASoNABAAA4BaJaQAD5SwXmArfVgAAP7oqLjli5au8h/G/qsY6V5ujh/pyDTnAFMmbQmEH1lrqmDnKDlbbZ/eVJ1gT02xfebli327Snq4tn8YKHBkrtQ0vWVKAAAAAA==",
@@ -112,7 +112,7 @@
       {
         "file": "jemina-green.jpg",
         "hash": "442beea13ff3beeb",
-        "src": "/catalog/jemina-embroidered-curtain-panel/jemina-green.jpg",
+        "src": "/catalog/jemina-macrame-curtain-panel/jemina-green.jpg",
         "width": 1600,
         "height": 2000,
         "blurDataURL": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAACwAQCdASoNABAAA4BaJZQAAuQCmYGAAP7ifKngs2UBn9VBvuK2+vOW7DlzZvH3tyfDmxHXWBdkP7YSA2yPyXD+JSFOYHz/w7XcXn8zMSVN7n5XdYAAAA==",
@@ -121,7 +121,7 @@
       {
         "file": "jemina-purple.jpg",
         "hash": "55ede79451ba3db8",
-        "src": "/catalog/jemina-embroidered-curtain-panel/jemina-purple.jpg",
+        "src": "/catalog/jemina-macrame-curtain-panel/jemina-purple.jpg",
         "width": 1600,
         "height": 2000,
         "blurDataURL": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAADwAQCdASoNABAAA4BaJZwAD5DwXrNei1AA/uKU/aUfTUqpratmkENqrR8R3vnml3ppqltn/4pAgaonCpfki+u4ygflxf4peg8SGTFk00V5WiH3GtH5jFAtccAAAA==",
@@ -130,18 +130,18 @@
       {
         "file": "jemina-red.jpg",
         "hash": "b9681fbe8b7b4262",
-        "src": "/catalog/jemina-embroidered-curtain-panel/jemina-red.jpg",
+        "src": "/catalog/jemina-macrame-curtain-panel/jemina-red.jpg",
         "width": 1600,
         "height": 2000,
         "blurDataURL": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAADwAQCdASoNABAAA4BaJYwAAudk7R3C0AAA/vdeIf5V7p/ZWhFwywSJM0+I3Ik/73ta5Y4EHJ4yE/0iG4vLtsEGNgWiIhjZmVKlr1wS49uLg3H7cJd6U34Qq8AAAA==",
         "provider": "local"
       }
     ],
-    "katya-embroidered-curtain-panel": [
+    "katya-macrame-curtain-panel": [
       {
         "file": "katya-blue.jpg",
         "hash": "2f2698bc74f26b00",
-        "src": "/catalog/katya-embroidered-curtain-panel/katya-blue.jpg",
+        "src": "/catalog/katya-macrame-curtain-panel/katya-blue.jpg",
         "width": 1600,
         "height": 2000,
         "blurDataURL": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAADQAQCdASoNABAAA4BaJZwAAuQy4rl3AAD+2Hdcng0PirtkYkT8QJvhXjjg3zYVUzI1Ua62d7gUfQ+9o2bX+xCiIyCPM6z2RzrimoAA",
@@ -150,7 +150,7 @@
       {
         "file": "katya-green.jpg",
         "hash": "14c6dc73ad0d7730",
-        "src": "/catalog/katya-embroidered-curtain-panel/katya-green.jpg",
+        "src": "/catalog/katya-macrame-curtain-panel/katya-green.jpg",
         "width": 1600,
         "height": 2000,
         "blurDataURL": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAADQAQCdASoNABAAA4BaJZwAAuRI3XkkoAD+6K1hxVjZmNdLjVofJV50kFI5uI/WGy9/AM+icW3lJJF6BETtTQbMahdlQSqQ87o0FOwDeFjKFjeREcAAAA==",
@@ -159,7 +159,7 @@
       {
         "file": "katya-pink.jpg",
         "hash": "c46385a0ef16917d",
-        "src": "/catalog/katya-embroidered-curtain-panel/katya-pink.jpg",
+        "src": "/catalog/katya-macrame-curtain-panel/katya-pink.jpg",
         "width": 1600,
         "height": 2000,
         "blurDataURL": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAADQAQCdASoNABAAA4BaJZwAAuRInHrtgAD+yrPqdrpYf14iMXWSTWTVUyOs/zgnAbi4L8L+7KQqKmELfQfHYF5rljqoBJDkaI1DyWIR7zusAA==",
@@ -168,7 +168,7 @@
       {
         "file": "katya-yellow.jpg",
         "hash": "23b765f213097acc",
-        "src": "/catalog/katya-embroidered-curtain-panel/katya-yellow.jpg",
+        "src": "/catalog/katya-macrame-curtain-panel/katya-yellow.jpg",
         "width": 1600,
         "height": 2000,
         "blurDataURL": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADQAQCdASoNABAAA4BaJYwAAuQX3bzd4AD+6K1a6rGzMbG96bpih9bWDYKulqz9S/DX8+5XTp7gkU46bEDkGZECtwzYuoMbdWbPxgQUuSdi90+AAAA=",
@@ -233,11 +233,11 @@
         "provider": "local"
       }
     ],
-    "sylvia-embroidered-curtain-panel": [
+    "sylvia-blackout-curtain-panel": [
       {
         "file": "sylvia-blue.jpg",
         "hash": "81b59a5e0e5f9b09",
-        "src": "/catalog/sylvia-embroidered-curtain-panel/sylvia-blue.jpg",
+        "src": "/catalog/sylvia-blackout-curtain-panel/sylvia-blue.jpg",
         "width": 1600,
         "height": 2000,
         "blurDataURL": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAAAQAgCdASoNABAAA4BaJZwAD5DweGkC0QWQAP7ws47JgTyYIJsKMiTZROy8ILz/IkyVPvcGOwMGpgoMNQDGf4giQv6H0atMSRH/VfG5+T9pg/XbvZci/jIvgoavWVE1lAMWZoQAAAA=",
@@ -246,7 +246,7 @@
       {
         "file": "sylvia-green.jpg",
         "hash": "1949a69a1e8c3008",
-        "src": "/catalog/sylvia-embroidered-curtain-panel/sylvia-green.jpg",
+        "src": "/catalog/sylvia-blackout-curtain-panel/sylvia-green.jpg",
         "width": 1600,
         "height": 2000,
         "blurDataURL": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAABQAgCdASoNABAAA4BaJZQAD5JweHG5IOsFdAAA/uvEd53Hsw2+lHeR2OHIC4/5zd6BK6sgqypwctCnsO/S/IIq61wp3tCO4HxnrY//fIdOjaxayUuCYaxdih2b1wT4AAA=",
@@ -255,7 +255,7 @@
       {
         "file": "sylvia-orange.jpg",
         "hash": "2ff51284950ce3f0",
-        "src": "/catalog/sylvia-embroidered-curtain-panel/sylvia-orange.jpg",
+        "src": "/catalog/sylvia-blackout-curtain-panel/sylvia-orange.jpg",
         "width": 1600,
         "height": 2000,
         "blurDataURL": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAAAwAgCdASoNABAAA4BaJQBOkDgDBNzXnxdGAAD+7mzkOoYiGRklR6gwP9bpFlyhxP0cripLIT4wfNT8+NgWU46nR8zsFqzls0e4h7cqKhDmBoAP23UOK+nDLGqLLcAA",
@@ -264,7 +264,7 @@
       {
         "file": "sylvia-purple.jpg",
         "hash": "2d2fe4c6e5c220a0",
-        "src": "/catalog/sylvia-embroidered-curtain-panel/sylvia-purple.jpg",
+        "src": "/catalog/sylvia-blackout-curtain-panel/sylvia-purple.jpg",
         "width": 1600,
         "height": 2000,
         "blurDataURL": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAADwAQCdASoNABAAA4BaJZQAAuQEr1EYEAAA/vKFSWS65J/zIoYiMvdS8kORsuXZSpQyVBZI5uy7kcAtBOQu0esWyv5hQLJwehvwNfHb82289vXyJkfIpsAA",
@@ -273,7 +273,7 @@
       {
         "file": "sylvia-yellow.jpg",
         "hash": "02e5fb269f03b746",
-        "src": "/catalog/sylvia-embroidered-curtain-panel/sylvia-yellow.jpg",
+        "src": "/catalog/sylvia-blackout-curtain-panel/sylvia-yellow.jpg",
         "width": 1600,
         "height": 2000,
         "blurDataURL": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAAAQAgCdASoNABAAA4BaJQBdgCHw6YtWYfpgAP7ws47Jv5O7vg8rMeNvqHifdH5JwXvvrrFWR7EJQI4amcDlYKFhT/2fGMEuEGwYDhfaNt3EUin5EAA=",

@@ -8,11 +8,12 @@ name:
   es: "Panel de cortina bordado Saylor con cenefa integrada"
 description:
   en: |
-    Embroidered curtain panel with an attached decorative valance. Panel
-    54" × 84", plus an 18" valance. One panel per package.
+    Curtain panel with large embroidered flowers and an attached decorative valance.
+    Panel 54" × 84", plus an 18" valance. One panel per package.
   es: |
-    Panel de cortina bordado con cenefa decorativa integrada. Panel de
-    54" × 84", más cenefa de 18". Un panel por paquete.
+    Panel de cortina con grandes flores bordadas y cenefa decorativa integrada.
+    Panel de 54" × 84", más cenefa de 18". Un panel por paquete.
 skuPrefix: CUR-SAY
-# Colors are added from the photo names (gold-1.jpg → gold).
+options:
+  color: [blue, yellow, white-brown, white-pink]
 createdAt: 2026-10-19

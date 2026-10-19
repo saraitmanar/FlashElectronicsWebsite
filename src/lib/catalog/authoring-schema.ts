@@ -49,14 +49,15 @@ export const brandsFileSchema = z.array(
 
 const optionCode = z.string().regex(/^[A-Z0-9]+$/, "use uppercase letters and numbers, e.g. NVY");
 
+const hexColor = z.string().regex(/^#[0-9a-fA-F]{6}$/, 'use a 6-digit hex color like "#1f2a44"');
+
 export const optionValueSchema = z.strictObject({
   id,
   code: optionCode,
   label: localizedSchema,
-  hex: z
-    .string()
-    .regex(/^#[0-9a-fA-F]{6}$/, 'use a 6-digit hex color like "#1f2a44"')
-    .optional(),
+  hex: hexColor.optional(),
+  /** Second color for two-tone values ("white-blue"): the swatch is split diagonally. */
+  hex2: hexColor.optional(),
 });
 
 export const optionLibrarySchema = z.strictObject({

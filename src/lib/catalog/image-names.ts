@@ -4,6 +4,8 @@
  *   navy-1.jpg         → tagged { color: "navy" }, order 1
  *   navy-queen-2.jpg   → tagged { color: "navy", size: "queen" }, order 2
  *   light-blue-1.jpg   → value ids may contain dashes
+ *   cordelia-navy.jpg  → a leading product name is ignored ("cordelia" in
+ *                        cordelia-…-curtain-panel), so this is navy, order 1
  *   main-1.jpg         → general photo shown first for every variant
  *   detail-1.jpg       → general photo (also: lifestyle, pack, back, …)
  */
@@ -39,10 +41,19 @@ export function stripExtension(file: string) {
   return file.replace(/\.[^.]+$/, "");
 }
 
-export function parseImageName(file: string, options: OptionForMatching[]): ParsedImageName {
+export function parseImageName(
+  file: string,
+  options: OptionForMatching[],
+  /** Product name prefix to ignore, e.g. "cordelia" for "cordelia-navy-1.jpg". */
+  ignorePrefix?: string,
+): ParsedImageName {
   const base = stripExtension(file).toLowerCase();
-  const m = base.match(/^(.*?)(?:-(\d+))?$/);
-  const rest = m?.[1] ?? base;
+  const name =
+    ignorePrefix && base.startsWith(`${ignorePrefix}-`)
+      ? base.slice(ignorePrefix.length + 1)
+      : base;
+  const m = name.match(/^(.*?)(?:-(\d+))?$/);
+  const rest = m?.[1] ?? name;
   const order = m?.[2] ? Number(m[2]) : 1;
 
   if (rest === "main") return { base, order, kind: "main" };

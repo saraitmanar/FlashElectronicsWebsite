@@ -1,0 +1,19 @@
+id: p_0009
+slug: jemina-macrame-curtain-panel
+status: draft # change to "active" when ready to publish
+brand: glory-home-design
+categories: [curtains]
+name:
+  en: "Jemina Decorative Macramé Curtain with Coordinated Valance"
+  es: "Cortina decorativa de macramé Jemina con cenefa coordinada"
+description:
+  en: |
+    Decorative macramé curtain panel with floral embroidery and a coordinated valance with a scalloped edge.
+    Panel 54" × 84", plus an 18" valance. One panel per package.
+  es: |
+    Panel de cortina decorativo de macramé con bordado floral y cenefa coordinada con borde festoneado.
+    Panel de 54" × 84", más cenefa de 18". Un panel por paquete.
+skuPrefix: CUR-JEM
+options:
+  color: [blue, green, purple, red]
+createdAt: 2026-10-19

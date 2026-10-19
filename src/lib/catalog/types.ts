@@ -49,7 +49,7 @@ export interface OptionValue {
   id: string; // "navy"
   code: string; // "NVY" — used to build SKUs
   label: Localized;
-  swatch?: { hex?: string };
+  swatch?: { hex?: string; hex2?: string };
 }
 
 export interface ProductOption {
