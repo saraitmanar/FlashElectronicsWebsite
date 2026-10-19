@@ -35,7 +35,7 @@ const PHOTOS_DIR = path.join(ROOT, "photos");
 const LOCAL_OUT_DIR = path.join(ROOT, "public", "catalog");
 const SUPPORTED = new Set([".jpg", ".jpeg", ".png", ".webp", ".avif", ".tif", ".tiff"]);
 // Bump when processing settings change so every photo is re-processed.
-const PROCESSING_VERSION = `v2-${PHOTO_SIZE.width}x${PHOTO_SIZE.height}-${PHOTO_MARGIN}`;
+const PROCESSING_VERSION = `v3-${PHOTO_SIZE.width}x${PHOTO_SIZE.height}-${PHOTO_MARGIN}`;
 const WHITE = { r: 255, g: 255, b: 255, alpha: 1 };
 
 if (existsSync(path.join(ROOT, ".env.local"))) process.loadEnvFile(path.join(ROOT, ".env.local"));
@@ -47,6 +47,11 @@ function parseCloudinaryUrl(url?: string) {
   if (!m)
     throw new Error("CLOUDINARY_URL must look like cloudinary://API_KEY:API_SECRET@CLOUD_NAME");
   return { apiKey: m[1], apiSecret: m[2], cloudName: m[3] };
+}
+
+/** "/catalog/slug/navy-1.ab12cd34.jpg" → its path under public/ */
+function publicFile(src: string) {
+  return path.join(ROOT, "public", ...src.split("/").filter(Boolean));
 }
 
 /** "Navy 1.JPG" → "navy-1" */
@@ -186,8 +191,8 @@ async function main() {
         .digest("hex")
         .slice(0, 16);
       const existing = previous.get(file);
-      const localPath = path.join(LOCAL_OUT_DIR, slug, file);
-      const stillThere = existing?.provider === "cloudinary" || existsSync(localPath);
+      const stillThere =
+        existing?.provider === "cloudinary" || (existing && existsSync(publicFile(existing.src)));
       if (existing && existing.hash === hash && existing.provider === provider && stillThere) {
         next.push(existing);
         stats.unchanged++;
@@ -202,12 +207,16 @@ async function main() {
       let src: string;
       if (cloudinary) {
         src = await uploadToCloudinary(processed.data, `products/${slug}/${base}`);
-        // Moving from local files to Cloudinary: drop the old local copy.
-        if (existing?.provider === "local") rmSync(localPath, { force: true });
       } else {
-        mkdirSync(path.dirname(localPath), { recursive: true });
-        writeFileSync(localPath, processed.data);
-        src = `/catalog/${slug}/${file}`;
+        // The hash in the file name gives an updated photo a new URL, so
+        // browsers and the image optimizer don't keep showing the old one.
+        src = `/catalog/${slug}/${base}.${hash.slice(0, 8)}.jpg`;
+        mkdirSync(path.join(LOCAL_OUT_DIR, slug), { recursive: true });
+        writeFileSync(publicFile(src), processed.data);
+      }
+      // Drop the previous local copy (replaced, or moved to Cloudinary).
+      if (existing?.provider === "local" && existing.src !== src) {
+        rmSync(publicFile(existing.src), { force: true });
       }
       next.push({
         file,
@@ -228,7 +237,7 @@ async function main() {
     // Photos removed from this product's folder.
     for (const [file, img] of previous) {
       if (next.some((n) => n.file === file)) continue;
-      if (img.provider === "local") rmSync(path.join(LOCAL_OUT_DIR, slug, file), { force: true });
+      if (img.provider === "local") rmSync(publicFile(img.src), { force: true });
       stats.removed++;
       console.log(`- ${slug}/${file}`);
     }
