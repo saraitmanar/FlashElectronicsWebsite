@@ -1,0 +1,59 @@
+# Category tree. The id path (e.g. "bedding/comforters") is used in product
+# files and in URLs (/categories/bedding/comforters). Order here = display order.
+# Renaming an id changes URLs, so prefer editing names instead.
+
+- id: clothing
+  name: { en: Clothing, es: Ropa }
+  description:
+    en: Everyday clothing for men, women and kids, sold individually or in bulk.
+    es: Ropa para hombres, mujeres y niños, por unidad o al por mayor.
+  children:
+    - id: men
+      name: { en: Men, es: Hombres }
+    - id: women
+      name: { en: Women, es: Mujeres }
+    - id: kids
+      name: { en: Kids, es: Niños }
+
+- id: bedding
+  name: { en: Bedding, es: Ropa de cama }
+  description:
+    en: Comforter sets, sheets and blankets in many colors and sizes.
+    es: Juegos de edredón, sábanas y cobijas en muchos colores y tamaños.
+  children:
+    - id: comforters
+      name: { en: Comforter sets, es: Juegos de edredón }
+    - id: sheets
+      name: { en: Sheet sets, es: Juegos de sábanas }
+    - id: blankets
+      name: { en: Blankets, es: Cobijas }
+
+- id: curtains
+  name: { en: Curtains, es: Cortinas }
+  description:
+    en: Curtain panels and window treatments, from sheer to blackout.
+    es: Paneles de cortina y decoración de ventanas, desde transparentes hasta blackout.
+
+- id: home-goods
+  name: { en: Home goods, es: Artículos para el hogar }
+  children:
+    - id: kitchen
+      name: { en: Kitchen, es: Cocina }
+    - id: decor
+      name: { en: Decor, es: Decoración }
+
+- id: perfumes
+  name: { en: Perfumes, es: Perfumes }
+  children:
+    - id: women
+      name: { en: For women, es: Para mujer }
+    - id: men
+      name: { en: For men, es: Para hombre }
+
+- id: household
+  name: { en: Household products, es: Productos del hogar }
+  children:
+    - id: cleaning
+      name: { en: Cleaning, es: Limpieza }
+    - id: storage
+      name: { en: Storage, es: Organización }

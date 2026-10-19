@@ -1,0 +1,10 @@
+# Bed sizes for bedding. Use in products as:  bed-size: [queen, king]
+
+name: { en: Bed size, es: Tamaño de cama }
+type: pill
+values:
+  - { id: twin, code: TW, label: { en: Twin, es: Twin (Sencilla) } }
+  - { id: full, code: FL, label: { en: Full, es: Full (Matrimonial) } }
+  - { id: queen, code: QN, label: { en: Queen, es: Queen } }
+  - { id: king, code: KG, label: { en: King, es: King } }
+  - { id: cal-king, code: CK, label: { en: California King, es: California King } }

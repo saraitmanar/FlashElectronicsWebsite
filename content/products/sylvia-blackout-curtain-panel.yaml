@@ -1,0 +1,19 @@
+id: p_0013
+slug: sylvia-blackout-curtain-panel
+status: active
+brand: glory-home-design
+categories: [curtains]
+name:
+  en: "Sylvia Foil Printed Blackout Window Panel with Attached Valance"
+  es: "Panel de cortina blackout Sylvia con estampado metalizado y cenefa integrada"
+description:
+  en: |
+    Foil printed floral blackout window panel with an attached valance with beaded tassels.
+    Panel 54" × 84", plus an 18" valance. One panel per package.
+  es: |
+    Panel de cortina blackout con estampado floral metalizado y cenefa integrada con borlas.
+    Panel de 54" × 84", más cenefa de 18". Un panel por paquete.
+skuPrefix: CUR-SYL
+options:
+  color: [blue, green, orange, purple, yellow]
+createdAt: 2026-10-19

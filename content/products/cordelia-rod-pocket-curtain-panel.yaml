@@ -1,0 +1,19 @@
+id: p_0007
+slug: cordelia-rod-pocket-curtain-panel
+status: active
+brand: glory-home-design
+categories: [curtains]
+name:
+  en: "Cordelia Rod Pocket Window Panel with Attached Valance"
+  es: "Panel de cortina Cordelia con jareta y cenefa integrada"
+description:
+  en: |
+    Rod pocket window panel with an attached valance with fringe trim.
+    Panel 54" × 84", plus an 18" valance. One panel per package.
+  es: |
+    Panel de cortina con jareta para barra y cenefa integrada con flecos.
+    Panel de 54" × 84", más cenefa de 18". Un panel por paquete.
+skuPrefix: CUR-COR
+options:
+  color: [red, maroon, gold, green, blue, purple]
+createdAt: 2026-10-19

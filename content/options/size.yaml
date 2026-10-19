@@ -1,0 +1,13 @@
+# Clothing sizes. Use in products as:  size: [s, m, l, xl]
+
+name: { en: Size, es: Talla }
+type: pill
+values:
+  - { id: xs, code: XS, label: { en: XS, es: XS } }
+  - { id: s, code: S, label: { en: S, es: S } }
+  - { id: m, code: M, label: { en: M, es: M } }
+  - { id: l, code: L, label: { en: L, es: L } }
+  - { id: xl, code: XL, label: { en: XL, es: XL } }
+  - { id: 2xl, code: 2XL, label: { en: 2XL, es: 2XL } }
+  - { id: 3xl, code: 3XL, label: { en: 3XL, es: 3XL } }
+  - { id: one-size, code: OS, label: { en: One size, es: Talla única } }

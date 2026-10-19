@@ -1,0 +1,19 @@
+id: p_0011
+slug: noa-embroidered-curtain-panel
+status: active
+brand: glory-home-design
+categories: [curtains]
+name:
+  en: "Noa Embroidered Curtain Panel with Attached Valance"
+  es: "Panel de cortina bordado Noa con cenefa integrada"
+description:
+  en: |
+    From the Noa collection: embroidered curtain panel with an attached decorative valance.
+    Panel 54" × 84", plus an 18" valance. One panel per package.
+  es: |
+    De la colección Noa: panel de cortina bordado con cenefa decorativa integrada.
+    Panel de 54" × 84", más cenefa de 18". Un panel por paquete.
+skuPrefix: CUR-NOA
+options:
+  color: [white-green, white-pink]
+createdAt: 2026-10-19
